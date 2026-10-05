@@ -23,6 +23,7 @@ UNKNOWN = '（未標廠牌）'
 # 廠牌別名對照（孝瓏指定寫短的）
 ALIAS = {
     'omnimusic': 'Omni',      # 就寫 Omni
+    'koka media': 'Koka',     # 只要 Koka，不要 Media
     'arcadia': 'Arcadia Cosmos',   # 孝瓏：Arcadia 要和 Arcadia Cosmos Special Select 分開
 }
 
