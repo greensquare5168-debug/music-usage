@@ -20,7 +20,11 @@
   <div class="grid">
     <div class="card wide">
       <h2>該廠牌專輯使用排行</h2>
-      <p class="hint">依「站上使用頁數」排序</p>
+      <p class="hint">排序：
+        <span class="seg" id="sortbar">
+          <button data-sort="count" class="on">使用頁數</button>
+          <button data-sort="az">A–Z</button>
+        </span></p>
       <div class="cbox" id="box-albums"></div>
     </div>
     <div class="card wide">
@@ -60,7 +64,7 @@ fetch('stats.json',{cache:'no-store'}).then(r=>{ if(!r.ok) throw new Error(r.sta
   const h = Math.max(300, alb.length * 24);
   box.style.height = h + 'px';
   const ctx = document.createElement('canvas'); box.appendChild(ctx);
-  new Chart(ctx, {
+  const chart = new Chart(ctx, {
     type:'bar',
     data:{ labels: alb.map(a=>a.name), datasets:[{ data: alb.map(a=>a.count),
            backgroundColor:'#12b5a5', borderRadius:5, borderSkipped:false, maxBarThickness:20 }] },
@@ -71,11 +75,27 @@ fetch('stats.json',{cache:'no-store'}).then(r=>{ if(!r.ok) throw new Error(r.sta
   });
 
   document.getElementById('acount').textContent = NUM(alb.length);
-  const max = alb[0] ? alb[0].count : 1;
-  document.getElementById('alist').innerHTML = alb.map((a,i)=>`
-    <tr><td><span class="rank">${i+1}</span></td><td>${a.name}</td>
-      <td class="n">${NUM(a.count)}</td>
-      <td><span class="bar-mini" style="width:${Math.round(a.count/max*170)}px;background:#12b5a5"></span></td></tr>`).join('');
+  let sortMode = 'count';
+  function renderAlb(){
+    const list = alb.slice();
+    if (sortMode === 'az') list.sort((a,b)=>a.name.localeCompare(b.name, 'en', {numeric:true}));
+    else                    list.sort((a,b)=>b.count - a.count || a.name.localeCompare(b.name));
+    const max = list.length ? Math.max(...list.map(a=>a.count)) : 1;
+    chart.data.labels = list.map(a=>a.name);
+    chart.data.datasets[0].data = list.map(a=>a.count);
+    chart.update();
+    document.getElementById('alist').innerHTML = list.map((a,i)=>`
+      <tr><td><span class="rank">${i+1}</span></td><td>${a.name}</td>
+        <td class="n">${NUM(a.count)}</td>
+        <td><span class="bar-mini" style="width:${Math.round(a.count/max*170)}px;background:#12b5a5"></span></td></tr>`).join('');
+  }
+  renderAlb();
+  document.getElementById('sortbar').addEventListener('click', ev=>{
+    const b = ev.target.closest('button[data-sort]'); if(!b) return;
+    sortMode = b.dataset.sort;
+    [...ev.currentTarget.querySelectorAll('button')].forEach(x=>x.classList.toggle('on', x===b));
+    renderAlb();
+  });
 }).catch(e=>{ document.getElementById('err').style.display='block'; console.error(e); });
 </script>
 </body>

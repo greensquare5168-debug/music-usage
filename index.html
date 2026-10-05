@@ -19,7 +19,11 @@
   <div class="grid">
     <div class="card wide">
       <h2>全部廠牌（點列進入專輯）</h2>
-      <p class="hint">共 <span id="labcount">—</span> 個廠牌</p>
+      <p class="hint">共 <span id="labcount">—</span> 個廠牌　·　排序：
+        <span class="seg" id="sortbar">
+          <button data-sort="count" class="on">使用頁數</button>
+          <button data-sort="az">A–Z</button>
+        </span></p>
       <table><thead><tr><th style="width:44px">#</th><th>廠牌</th><th class="n">使用頁數</th><th class="n">專輯數</th><th style="width:180px"></th></tr></thead>
         <tbody id="lablist"></tbody></table>
     </div>
@@ -71,16 +75,29 @@ fetch('stats.json',{cache:'no-store'}).then(r=>{ if(!r.ok) throw new Error(r.sta
 
   const labels = d.labels;
 
-  document.getElementById('labcount').textContent = NUM(d.labels.length);
-  const max = d.labels[0] ? d.labels[0].total : 1;
-  document.getElementById('lablist').innerHTML = d.labels.map((l,i)=>`
-    <tr data-name="${l.name.replace(/"/g,'&quot;')}" style="cursor:pointer">
-      <td><span class="rank">${i+1}</span></td>
-      <td>${l.name}</td>
-      <td class="n">${NUM(l.total)}</td>
-      <td class="n">${NUM(l.n)}</td>
-      <td><span class="bar-mini" style="width:${Math.round(l.total/max*170)}px"></span></td>
-    </tr>`).join('');
+  let sortMode = 'count';
+  function renderList(){
+    const list = labels.slice();
+    if (sortMode === 'az') list.sort((a,b)=>a.name.localeCompare(b.name, 'en', {numeric:true}));
+    else                    list.sort((a,b)=>b.total - a.total || a.name.localeCompare(b.name));
+    const max = list.length ? Math.max(...list.map(l=>l.total)) : 1;
+    document.getElementById('labcount').textContent = NUM(list.length);
+    document.getElementById('lablist').innerHTML = list.map((l,i)=>`
+      <tr data-name="${l.name.replace(/"/g,'&quot;')}" style="cursor:pointer">
+        <td><span class="rank">${i+1}</span></td>
+        <td>${l.name}</td>
+        <td class="n">${NUM(l.total)}</td>
+        <td class="n">${NUM(l.n)}</td>
+        <td><span class="bar-mini" style="width:${Math.round(l.total/max*170)}px"></span></td>
+      </tr>`).join('');
+  }
+  renderList();
+  document.getElementById('sortbar').addEventListener('click', ev=>{
+    const b = ev.target.closest('button[data-sort]'); if(!b) return;
+    sortMode = b.dataset.sort;
+    [...ev.currentTarget.querySelectorAll('button')].forEach(x=>x.classList.toggle('on', x===b));
+    renderList();
+  });
   document.getElementById('lablist').addEventListener('click', ev=>{
     const tr = ev.target.closest('tr[data-name]'); if (tr) go(tr.dataset.name);
   });
