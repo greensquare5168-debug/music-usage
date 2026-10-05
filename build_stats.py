@@ -20,6 +20,11 @@ ALBUM = os.path.join(ROOT, '全站專輯_未建_依使用排序_含平台_202610
 
 UNKNOWN = '（未標廠牌）'
 
+# 廠牌別名對照（孝瓏指定寫短的）
+ALIAS = {
+    'omnimusic': 'Omni',      # 就寫 Omni
+}
+
 def brand_of(lib):
     """把『圖書館』字串正規化成廠牌清單（去掉 CD/vinyl/digital/年份 等格式後綴）。"""
     if not lib.strip():
@@ -54,6 +59,7 @@ def brand_of(lib):
             p = parts[0]
         if len(p) < 3 or p.lower() in ('the', 'a', 'an'):
             p = pmid          # 避免去尾後只剩空／『The』這類沒意義的名字
+        p = ALIAS.get(p.lower(), p)
         if p:
             out.append(p)
     return out or [UNKNOWN]
