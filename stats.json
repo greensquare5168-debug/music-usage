@@ -4,7 +4,7 @@
  "summary": {
   "pages": 1020,
   "records": 9604,
-  "labels": 147,
+  "labels": 141,
   "albums": 3888,
   "tracks": 60
  },
@@ -3122,8 +3122,8 @@
   },
   {
    "name": "CPM",
-   "total": 1070,
-   "n": 95,
+   "total": 1169,
+   "n": 110,
    "albums": [
     {
      "name": "CAR 176 Children/Comedy/Shorts 2.（1990）",
@@ -3178,6 +3178,14 @@
      "count": 23
     },
     {
+     "name": "CAS 016 Light Music/Light Activity（2003）",
+     "count": 20
+    },
+    {
+     "name": "CLASS 011 Classical Selection 2（1992）",
+     "count": 20
+    },
+    {
      "name": "CAR 207 Children/Well Known Tunes 1（1994）",
      "count": 17
     },
@@ -3218,11 +3226,19 @@
      "count": 12
     },
     {
+     "name": "CAS 015 Comedy/Cartoon（2003）",
+     "count": 12
+    },
+    {
      "name": "CAR 275 Music for the Movies 1（1998）",
      "count": 9
     },
     {
      "name": "CAR 379 Reggae & Ska（2007）",
+     "count": 9
+    },
+    {
+     "name": "CAS 038 The Big Parade（2012）",
      "count": 9
     },
     {
@@ -3238,11 +3254,23 @@
      "count": 8
     },
     {
+     "name": "CLASS 008 Mendelssohn / Grieg（1991）",
+     "count": 8
+    },
+    {
      "name": "CAR 112 Bottleneck & Electric Guitar（1989）",
      "count": 7
     },
     {
      "name": "CAR 323 Rock Songs/Instrumentals（2002）",
+     "count": 7
+    },
+    {
+     "name": "CAS 003 Light-Hearted/Comedy/Cartoon（2000）",
+     "count": 7
+    },
+    {
+     "name": "CLASS 037 What a Classic Three（2015）",
      "count": 7
     },
     {
@@ -3291,6 +3319,10 @@
     },
     {
      "name": "CAR 377 Crime Scene Investigation - 2（2006）",
+     "count": 5
+    },
+    {
+     "name": "CAS 033 Children - Fun & Laughter（2009）",
      "count": 5
     },
     {
@@ -3370,6 +3402,10 @@
      "count": 3
     },
     {
+     "name": "CAS 007 Dance Hall/Swing/Jazz/Lounge（2001）",
+     "count": 3
+    },
+    {
      "name": "CAR 121 National Anthems（1989）",
      "count": 2
     },
@@ -3395,6 +3431,14 @@
     },
     {
      "name": "CAR 422 Ultimate Hollywood Trailers 1（2011）",
+     "count": 2
+    },
+    {
+     "name": "CAS 018 Big Band & Jazz Combos（2003）",
+     "count": 2
+    },
+    {
+     "name": "CAS 019 Jazzy Vibes（2004）",
      "count": 2
     },
     {
@@ -3503,6 +3547,22 @@
     },
     {
      "name": "CAR 427 Electro Swing（2012）",
+     "count": 1
+    },
+    {
+     "name": "CAS 008 Well Known Tunes/Marches（2001）",
+     "count": 1
+    },
+    {
+     "name": "CAS 010 City Life/Marching Bands（2002）",
+     "count": 1
+    },
+    {
+     "name": "CAS 017 Fanfares（2003）",
+     "count": 1
+    },
+    {
+     "name": "CLASS 013 Popular Mahler（1993）",
      "count": 1
     }
    ]
@@ -4652,8 +4712,8 @@
   },
   {
    "name": "Parry",
-   "total": 956,
-   "n": 138,
+   "total": 957,
+   "n": 139,
    "albums": [
     {
      "name": "PML-CD 1045 Playtime（1989）",
@@ -5042,6 +5102,10 @@
     {
      "name": "PML-CD 1151 Just Jazz 1（1996）",
      "count": 2
+    },
+    {
+     "name": "PMCD 002 Handel & Fasch（1990）",
+     "count": 1
     },
     {
      "name": "PML 08 Brass Colours（1978）",
@@ -6147,7 +6211,7 @@
    ]
   },
   {
-   "name": "Chappell Recorded Music Library",
+   "name": "Chappell",
    "total": 419,
    "n": 120,
    "albums": [
@@ -6634,13 +6698,17 @@
    ]
   },
   {
-   "name": "Amphonic Music Sound Stage",
-   "total": 301,
-   "n": 62,
+   "name": "Amphonic",
+   "total": 346,
+   "n": 70,
    "albums": [
     {
      "name": "AVF 46 New Age Highway（1986）",
      "count": 26
+    },
+    {
+     "name": "AMPS 1007 Scenic-Light Documentary（1973）",
+     "count": 23
     },
     {
      "name": "AVF 134 Guitar Melodies（1998）",
@@ -6669,6 +6737,10 @@
     {
      "name": "AVF 130 Soprano Sax（1997）",
      "count": 11
+    },
+    {
+     "name": "AMPS 125 Let Me Call You Swinger（1980）",
+     "count": 9
     },
     {
      "name": "AVF 137 Alternative Volume 1（1998）",
@@ -6711,6 +6783,10 @@
      "count": 5
     },
     {
+     "name": "AMPS 1004 Harpsichord Rhythm Group（1973）",
+     "count": 4
+    },
+    {
      "name": "AVF 004 Music Style（1994）",
      "count": 4
     },
@@ -6739,6 +6815,10 @@
      "count": 4
     },
     {
+     "name": "AMPS 118 Pictures In Sound（1976）",
+     "count": 3
+    },
+    {
      "name": "AVF 003 Science & Nature（1994）",
      "count": 3
     },
@@ -6757,6 +6837,14 @@
     {
      "name": "AVF 66 Globe-Trotter（1988）",
      "count": 3
+    },
+    {
+     "name": "AMPS 101 Big Band Sounds Of Today（1971）",
+     "count": 2
+    },
+    {
+     "name": "AMPS 126 Jump To It（1980）",
+     "count": 2
     },
     {
      "name": "AVF 104 Elements（1992）",
@@ -6801,6 +6889,14 @@
     {
      "name": "AVF 80 Landscapes（1989）",
      "count": 2
+    },
+    {
+     "name": "AMPS 115 Dimensions In Sound（1976）",
+     "count": 1
+    },
+    {
+     "name": "AMPS 116 Syd Dale Special（1976）",
+     "count": 1
     },
     {
      "name": "AVF 1003 Sacred & Secular（1994）",
@@ -7444,7 +7540,7 @@
    ]
   },
   {
-   "name": "Standard Music Library",
+   "name": "Standard",
    "total": 259,
    "n": 45,
    "albums": [
@@ -9706,6 +9802,121 @@
    ]
   },
   {
+   "name": "KPM",
+   "total": 137,
+   "n": 27,
+   "albums": [
+    {
+     "name": "KPM 709 Sonic Logos, Links and Beds 1（2009）",
+     "count": 45
+    },
+    {
+     "name": "KPMWM 22 Bolivia and Peru - Traditional（2009）",
+     "count": 26
+    },
+    {
+     "name": "KPMCS 08 Light Classics Volume Two（1994）",
+     "count": 20
+    },
+    {
+     "name": "KPM 710 Sonic Logos, Links and Beds 2（2009）",
+     "count": 13
+    },
+    {
+     "name": "KPMCS 07 Light Classics Volume One（1994）",
+     "count": 8
+    },
+    {
+     "name": "KPM 643 The KPM 1000 Series - Volume 2（2006）",
+     "count": 3
+    },
+    {
+     "name": "KPM 670 50s And 60s Vinyl Classics（2008）",
+     "count": 2
+    },
+    {
+     "name": "KPM 2239 Cinematic Pop（2021）",
+     "count": 1
+    },
+    {
+     "name": "KPM 2277 Lounge Pop（2023）",
+     "count": 1
+    },
+    {
+     "name": "KPM 697 Quirky Folky Things（2008）",
+     "count": 1
+    },
+    {
+     "name": "KPM 731 Funk and Disco（2009）",
+     "count": 1
+    },
+    {
+     "name": "KPM 734 Kids Club（2010）",
+     "count": 1
+    },
+    {
+     "name": "KPM 822 Vintage Remix Boutique（2012）",
+     "count": 1
+    },
+    {
+     "name": "KPMCS 06 Opera & Choral Volume Two（1994）",
+     "count": 1
+    },
+    {
+     "name": "KPMCS 30 Classical Miscellany（2001）",
+     "count": 1
+    },
+    {
+     "name": "KPMWM 12 North India - Remixed（2004）",
+     "count": 1
+    },
+    {
+     "name": "KPMWM 15 Indonesia - Remixed（2005）",
+     "count": 1
+    },
+    {
+     "name": "KPMWM 18 Southern Laos And Vietnam - Remixed（2006）",
+     "count": 1
+    },
+    {
+     "name": "KPMWM 21 China and Thailand - Remixed（2007）",
+     "count": 1
+    },
+    {
+     "name": "KPMWM 24 Bolivia and Peru - Remixed（2010）",
+     "count": 1
+    },
+    {
+     "name": "KPMWM 27 Brazil - Remixed（2010）",
+     "count": 1
+    },
+    {
+     "name": "KPMWM 3 Sudan And Yemen - Remixed（2003）",
+     "count": 1
+    },
+    {
+     "name": "KPMWM 30 Japan - Remixed（2010）",
+     "count": 1
+    },
+    {
+     "name": "KPMWM 33 Iran - Remixed（2012）",
+     "count": 1
+    },
+    {
+     "name": "KPMWM 36 Nepal Remixed（2012）",
+     "count": 1
+    },
+    {
+     "name": "KPMWM 6 Persia And Iran - Remixed（2003）",
+     "count": 1
+    },
+    {
+     "name": "KPMWM 9 South India - Remixed（2004）",
+     "count": 1
+    }
+   ]
+  },
+  {
    "name": "X-Series",
    "total": 136,
    "n": 94,
@@ -11037,7 +11248,7 @@
    ]
   },
   {
-   "name": "Sound Ideas Production Music Library",
+   "name": "Sound Ideas",
    "total": 114,
    "n": 63,
    "albums": [
@@ -12309,53 +12520,6 @@
    ]
   },
   {
-   "name": "KPM",
-   "total": 69,
-   "n": 10,
-   "albums": [
-    {
-     "name": "KPM 709 Sonic Logos, Links and Beds 1（2009）",
-     "count": 45
-    },
-    {
-     "name": "KPM 710 Sonic Logos, Links and Beds 2（2009）",
-     "count": 13
-    },
-    {
-     "name": "KPM 643 The KPM 1000 Series - Volume 2（2006）",
-     "count": 3
-    },
-    {
-     "name": "KPM 670 50s And 60s Vinyl Classics（2008）",
-     "count": 2
-    },
-    {
-     "name": "KPM 2239 Cinematic Pop（2021）",
-     "count": 1
-    },
-    {
-     "name": "KPM 2277 Lounge Pop（2023）",
-     "count": 1
-    },
-    {
-     "name": "KPM 697 Quirky Folky Things（2008）",
-     "count": 1
-    },
-    {
-     "name": "KPM 731 Funk and Disco（2009）",
-     "count": 1
-    },
-    {
-     "name": "KPM 734 Kids Club（2010）",
-     "count": 1
-    },
-    {
-     "name": "KPM 822 Vintage Remix Boutique（2012）",
-     "count": 1
-    }
-   ]
-  },
-  {
    "name": "Audio",
    "total": 69,
    "n": 6,
@@ -12581,57 +12745,6 @@
    ]
   },
   {
-   "name": "CPM Archive Series",
-   "total": 63,
-   "n": 11,
-   "albums": [
-    {
-     "name": "CAS 016 Light Music/Light Activity（2003）",
-     "count": 20
-    },
-    {
-     "name": "CAS 015 Comedy/Cartoon（2003）",
-     "count": 12
-    },
-    {
-     "name": "CAS 038 The Big Parade（2012）",
-     "count": 9
-    },
-    {
-     "name": "CAS 003 Light-Hearted/Comedy/Cartoon（2000）",
-     "count": 7
-    },
-    {
-     "name": "CAS 033 Children - Fun & Laughter（2009）",
-     "count": 5
-    },
-    {
-     "name": "CAS 007 Dance Hall/Swing/Jazz/Lounge（2001）",
-     "count": 3
-    },
-    {
-     "name": "CAS 018 Big Band & Jazz Combos（2003）",
-     "count": 2
-    },
-    {
-     "name": "CAS 019 Jazzy Vibes（2004）",
-     "count": 2
-    },
-    {
-     "name": "CAS 008 Well Known Tunes/Marches（2001）",
-     "count": 1
-    },
-    {
-     "name": "CAS 010 City Life/Marching Bands（2002）",
-     "count": 1
-    },
-    {
-     "name": "CAS 017 Fanfares（2003）",
-     "count": 1
-    }
-   ]
-  },
-  {
    "name": "Dennis",
    "total": 63,
    "n": 35,
@@ -12779,7 +12892,7 @@
    ]
   },
   {
-   "name": "Image Music Library",
+   "name": "Image",
    "total": 63,
    "n": 22,
    "albums": [
@@ -13672,45 +13785,6 @@
    ]
   },
   {
-   "name": "Amphonic Music AMPS",
-   "total": 45,
-   "n": 8,
-   "albums": [
-    {
-     "name": "AMPS 1007 Scenic-Light Documentary（1973）",
-     "count": 23
-    },
-    {
-     "name": "AMPS 125 Let Me Call You Swinger（1980）",
-     "count": 9
-    },
-    {
-     "name": "AMPS 1004 Harpsichord Rhythm Group（1973）",
-     "count": 4
-    },
-    {
-     "name": "AMPS 118 Pictures In Sound（1976）",
-     "count": 3
-    },
-    {
-     "name": "AMPS 101 Big Band Sounds Of Today（1971）",
-     "count": 2
-    },
-    {
-     "name": "AMPS 126 Jump To It（1980）",
-     "count": 2
-    },
-    {
-     "name": "AMPS 115 Dimensions In Sound（1976）",
-     "count": 1
-    },
-    {
-     "name": "AMPS 116 Syd Dale Special（1976）",
-     "count": 1
-    }
-   ]
-  },
-  {
    "name": "Impress",
    "total": 42,
    "n": 9,
@@ -13923,65 +13997,6 @@
    ]
   },
   {
-   "name": "KPM World Music Series",
-   "total": 38,
-   "n": 13,
-   "albums": [
-    {
-     "name": "KPMWM 22 Bolivia and Peru - Traditional（2009）",
-     "count": 26
-    },
-    {
-     "name": "KPMWM 12 North India - Remixed（2004）",
-     "count": 1
-    },
-    {
-     "name": "KPMWM 15 Indonesia - Remixed（2005）",
-     "count": 1
-    },
-    {
-     "name": "KPMWM 18 Southern Laos And Vietnam - Remixed（2006）",
-     "count": 1
-    },
-    {
-     "name": "KPMWM 21 China and Thailand - Remixed（2007）",
-     "count": 1
-    },
-    {
-     "name": "KPMWM 24 Bolivia and Peru - Remixed（2010）",
-     "count": 1
-    },
-    {
-     "name": "KPMWM 27 Brazil - Remixed（2010）",
-     "count": 1
-    },
-    {
-     "name": "KPMWM 3 Sudan And Yemen - Remixed（2003）",
-     "count": 1
-    },
-    {
-     "name": "KPMWM 30 Japan - Remixed（2010）",
-     "count": 1
-    },
-    {
-     "name": "KPMWM 33 Iran - Remixed（2012）",
-     "count": 1
-    },
-    {
-     "name": "KPMWM 36 Nepal Remixed（2012）",
-     "count": 1
-    },
-    {
-     "name": "KPMWM 6 Persia And Iran - Remixed（2003）",
-     "count": 1
-    },
-    {
-     "name": "KPMWM 9 South India - Remixed（2004）",
-     "count": 1
-    }
-   ]
-  },
-  {
    "name": "Studio H",
    "total": 38,
    "n": 27,
@@ -14092,29 +14107,6 @@
     },
     {
      "name": "SH 048 Mystic Stars（2018）",
-     "count": 1
-    }
-   ]
-  },
-  {
-   "name": "CPM Classical Series",
-   "total": 36,
-   "n": 4,
-   "albums": [
-    {
-     "name": "CLASS 011 Classical Selection 2（1992）",
-     "count": 20
-    },
-    {
-     "name": "CLASS 008 Mendelssohn / Grieg（1991）",
-     "count": 8
-    },
-    {
-     "name": "CLASS 037 What a Classic Three（2015）",
-     "count": 7
-    },
-    {
-     "name": "CLASS 013 Popular Mahler（1993）",
      "count": 1
     }
    ]
@@ -14278,29 +14270,6 @@
     },
     {
      "name": "SPCD 040 Good Vibes（2016）",
-     "count": 1
-    }
-   ]
-  },
-  {
-   "name": "KPM Classical Series",
-   "total": 30,
-   "n": 4,
-   "albums": [
-    {
-     "name": "KPMCS 08 Light Classics Volume Two（1994）",
-     "count": 20
-    },
-    {
-     "name": "KPMCS 07 Light Classics Volume One（1994）",
-     "count": 8
-    },
-    {
-     "name": "KPMCS 06 Opera & Choral Volume Two（1994）",
-     "count": 1
-    },
-    {
-     "name": "KPMCS 30 Classical Miscellany（2001）",
      "count": 1
     }
    ]
@@ -14699,7 +14668,7 @@
    ]
   },
   {
-   "name": "NFL Music Library",
+   "name": "NFL",
    "total": 25,
    "n": 18,
    "albums": [
@@ -15216,7 +15185,7 @@
    ]
   },
   {
-   "name": "Aircraft Music Library",
+   "name": "Aircraft",
    "total": 17,
    "n": 17,
    "albums": [
@@ -15600,7 +15569,7 @@
    ]
   },
   {
-   "name": "Dimension Music Library",
+   "name": "Dimension",
    "total": 12,
    "n": 1,
    "albums": [
@@ -15731,7 +15700,7 @@
    ]
   },
   {
-   "name": "Manchester Music Library",
+   "name": "Manchester",
    "total": 11,
    "n": 9,
    "albums": [
@@ -15926,7 +15895,7 @@
    ]
   },
   {
-   "name": "Fontana Music Library",
+   "name": "Fontana",
    "total": 8,
    "n": 4,
    "albums": [
@@ -16161,7 +16130,7 @@
    ]
   },
   {
-   "name": "BackTraxx Music Library",
+   "name": "BackTraxx",
    "total": 7,
    "n": 5,
    "albums": [
@@ -16261,7 +16230,7 @@
    ]
   },
   {
-   "name": "Soundtrax Music Library",
+   "name": "Soundtrax",
    "total": 6,
    "n": 6,
    "albums": [
@@ -16418,7 +16387,7 @@
    ]
   },
   {
-   "name": "Sonia music library",
+   "name": "Sonia",
    "total": 2,
    "n": 1,
    "albums": [
@@ -16553,17 +16522,6 @@
    "albums": [
     {
      "name": "MON 64 New Waves（1987）",
-     "count": 1
-    }
-   ]
-  },
-  {
-   "name": "Parry Music Classical",
-   "total": 1,
-   "n": 1,
-   "albums": [
-    {
-     "name": "PMCD 002 Handel & Fasch（1990）",
      "count": 1
     }
    ]

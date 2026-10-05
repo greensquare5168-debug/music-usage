@@ -27,7 +27,8 @@ def brand_of(lib):
     out = []
     for p in re.split(r'\s+/\s+', lib):
         p = p.strip()
-        p = re.sub(r'^miscellaneous\s+', '', p)
+        raw = re.sub(r'^miscellaneous\s+', '', p).strip()
+        p = raw
         p = re.sub(r'\s+\(.*\)\s*$', '', p)
         p = re.sub(r'\s+(pre|post)-\d{4}.*$', '', p)
         p = re.sub(r'\s+albums?\b.*$', '', p)
@@ -37,10 +38,22 @@ def brand_of(lib):
         p = re.sub(r'\s+vinyl$', '', p)
         p = re.sub(r'\s+digital$', '', p)
         p = re.sub(r'\s+records/$', '', p)
-        p = re.sub(r'\s+classical music$', '', p)
-        p = re.sub(r'\s+Music$', '', p)          # 寫 Bruton 不要 Music
-        p = re.sub(r'\s+Main Series$', '', p)
+        pmid = p.strip()                       # 格式後綴清完的樣子（供後面防呆回退用）
+        p = re.sub(r'\s+Production Music Library$', '', p, flags=re.I)   # Sound Ideas Production Music Library → Sound Ideas
+        p = re.sub(r'\s+Recorded Music Library$', '', p, flags=re.I)     # Chappell Recorded Music Library → Chappell
+        p = re.sub(r'\s+Music Sound Stage$', '', p, flags=re.I)          # Amphonic Music Sound Stage → Amphonic
+        p = re.sub(r'\s+Music Library$', '', p, flags=re.I)              # Standard Music Library → Standard
+        p = re.sub(r'\s+AMPS$', '', p, flags=re.I)                       # Amphonic Music AMPS → Amphonic
+        p = re.sub(r'\s+classical music$', '', p, flags=re.I)             # Cavendish Music classical music → Cavendish
+        p = re.sub(r'\s+(Music\s+)?classical$', '', p, flags=re.I)        # Parry Music Classical → Parry
+        p = re.sub(r'\s+Music$', '', p, flags=re.I)          # 寫 Bruton 不要 Music
+        p = re.sub(r'\s+(Main|Archive) Series$', '', p)
         p = p.strip()
+        parts = p.split()
+        if len(parts) > 1 and parts[0] in ('CPM', 'KPM'):   # CPM/KPM 各種系列→單一廠牌
+            p = parts[0]
+        if len(p) < 3 or p.lower() in ('the', 'a', 'an'):
+            p = pmid          # 避免去尾後只剩空／『The』這類沒意義的名字
         if p:
             out.append(p)
     return out or [UNKNOWN]
