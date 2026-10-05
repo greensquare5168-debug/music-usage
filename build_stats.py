@@ -38,6 +38,7 @@ def brand_of(lib):
         p = re.sub(r'\s+digital$', '', p)
         p = re.sub(r'\s+records/$', '', p)
         p = re.sub(r'\s+classical music$', '', p)
+        p = re.sub(r'\s+Music$', '', p)          # 寫 Bruton 不要 Music
         p = re.sub(r'\s+Main Series$', '', p)
         p = p.strip()
         if p:
