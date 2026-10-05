@@ -4,612 +4,11 @@
  "summary": {
   "pages": 1020,
   "records": 9604,
-  "labels": 142,
+  "labels": 143,
   "albums": 3888,
   "tracks": 60
  },
  "labels": [
-  {
-   "name": "CPM",
-   "total": 1106,
-   "n": 99,
-   "albums": [
-    {
-     "name": "CAR 176 Children/Comedy/Shorts 2",
-     "code": "CAR 176",
-     "title": "Children/Comedy/Shorts 2",
-     "count": 132
-    },
-    {
-     "name": "CAR 156 Children/Comedy/Shorts",
-     "code": "CAR 156",
-     "title": "Children/Comedy/Shorts",
-     "count": 86
-    },
-    {
-     "name": "CAR 150 Cartoon/Comedy/Children",
-     "code": "CAR 150",
-     "title": "Cartoon/Comedy/Children",
-     "count": 78
-    },
-    {
-     "name": "CAR 237 Fun/Novelty/Kids",
-     "code": "CAR 237",
-     "title": "Fun/Novelty/Kids",
-     "count": 68
-    },
-    {
-     "name": "CAR 136 Comedy/Cartoon/Children",
-     "code": "CAR 136",
-     "title": "Comedy/Cartoon/Children",
-     "count": 63
-    },
-    {
-     "name": "CAR 171 Jingles Vol. 3",
-     "code": "CAR 171",
-     "title": "Jingles Vol. 3",
-     "count": 55
-    },
-    {
-     "name": "CAR 257 Comedy/TV/Entertainment",
-     "code": "CAR 257",
-     "title": "Comedy/TV/Entertainment",
-     "count": 47
-    },
-    {
-     "name": "CAR 252 Fun and Games",
-     "code": "CAR 252",
-     "title": "Fun and Games",
-     "count": 40
-    },
-    {
-     "name": "CAR 159 Percussion/World Travel",
-     "code": "CAR 159",
-     "title": "Percussion/World Travel",
-     "count": 34
-    },
-    {
-     "name": "CAR 127 Leisure",
-     "code": "CAR 127",
-     "title": "Leisure",
-     "count": 31
-    },
-    {
-     "name": "CAR 135 Acoustic Expressions",
-     "code": "CAR 135",
-     "title": "Acoustic Expressions",
-     "count": 26
-    },
-    {
-     "name": "CAR 248 Jingles 5",
-     "code": "CAR 248",
-     "title": "Jingles 5",
-     "count": 23
-    },
-    {
-     "name": "CAR 303 Pastoral - Orchestral/Solo",
-     "code": "CAR 303",
-     "title": "Pastoral - Orchestral/Solo",
-     "count": 23
-    },
-    {
-     "name": "CLASS 011 Classical Selection 2",
-     "code": "CLASS 011",
-     "title": "Classical Selection 2",
-     "count": 20
-    },
-    {
-     "name": "CAR 207 Children/Well Known Tunes 1",
-     "code": "CAR 207",
-     "title": "Children/Well Known Tunes 1",
-     "count": 17
-    },
-    {
-     "name": "CAR 229 The World of Christmas",
-     "code": "CAR 229",
-     "title": "The World of Christmas",
-     "count": 15
-    },
-    {
-     "name": "CAR 111 Barrel Organ/Squeezebox",
-     "code": "CAR 111",
-     "title": "Barrel Organ/Squeezebox",
-     "count": 14
-    },
-    {
-     "name": "CAR 300 Short Cuts and Idents",
-     "code": "CAR 300",
-     "title": "Short Cuts and Idents",
-     "count": 14
-    },
-    {
-     "name": "CAR 106 Wurlitzer & Mechanical Organs",
-     "code": "CAR 106",
-     "title": "Wurlitzer & Mechanical Organs",
-     "count": 13
-    },
-    {
-     "name": "CAR 154 Drama/Horror/Shorts",
-     "code": "CAR 154",
-     "title": "Drama/Horror/Shorts",
-     "count": 13
-    },
-    {
-     "name": "CAR 161 Organ - Dancing & Muzak",
-     "code": "CAR 161",
-     "title": "Organ - Dancing & Muzak",
-     "count": 13
-    },
-    {
-     "name": "CAR 219 Drama/Detective/Rock",
-     "code": "CAR 219",
-     "title": "Drama/Detective/Rock",
-     "count": 13
-    },
-    {
-     "name": "CAR 241 Harmonica and Banjo",
-     "code": "CAR 241",
-     "title": "Harmonica and Banjo",
-     "count": 13
-    },
-    {
-     "name": "CAR 310 Music for the Movies 2",
-     "code": "CAR 310",
-     "title": "Music for the Movies 2",
-     "count": 12
-    },
-    {
-     "name": "CAR 275 Music for the Movies 1",
-     "code": "CAR 275",
-     "title": "Music for the Movies 1",
-     "count": 9
-    },
-    {
-     "name": "CAR 379 Reggae & Ska",
-     "code": "CAR 379",
-     "title": "Reggae & Ska",
-     "count": 9
-    },
-    {
-     "name": "CAR 168 Drama Themes",
-     "code": "CAR 168",
-     "title": "Drama Themes",
-     "count": 8
-    },
-    {
-     "name": "CAR 183 Fanfares/Logos/Percussion",
-     "code": "CAR 183",
-     "title": "Fanfares/Logos/Percussion",
-     "count": 8
-    },
-    {
-     "name": "CAR 346 Christmas Treats",
-     "code": "CAR 346",
-     "title": "Christmas Treats",
-     "count": 8
-    },
-    {
-     "name": "CLASS 008 Mendelssohn / Grieg",
-     "code": "CLASS 008",
-     "title": "Mendelssohn / Grieg",
-     "count": 8
-    },
-    {
-     "name": "CAR 112 Bottleneck & Electric Guitar",
-     "code": "CAR 112",
-     "title": "Bottleneck & Electric Guitar",
-     "count": 7
-    },
-    {
-     "name": "CAR 323 Rock Songs/Instrumentals",
-     "code": "CAR 323",
-     "title": "Rock Songs/Instrumentals",
-     "count": 7
-    },
-    {
-     "name": "CLASS 037 What a Classic Three",
-     "code": "CLASS 037",
-     "title": "What a Classic Three",
-     "count": 7
-    },
-    {
-     "name": "CAR 125 Shorts/Links/Stings",
-     "code": "CAR 125",
-     "title": "Shorts/Links/Stings",
-     "count": 6
-    },
-    {
-     "name": "CAR 133 Jingles/Idents",
-     "code": "CAR 133",
-     "title": "Jingles/Idents",
-     "count": 6
-    },
-    {
-     "name": "CAR 208 Children/Well Known Tunes 2",
-     "code": "CAR 208",
-     "title": "Children/Well Known Tunes 2",
-     "count": 6
-    },
-    {
-     "name": "CAR 282 Drama/Suspense/Tragedy/War",
-     "code": "CAR 282",
-     "title": "Drama/Suspense/Tragedy/War",
-     "count": 6
-    },
-    {
-     "name": "CAR 288 Country Music 2 - Band/Solo",
-     "code": "CAR 288",
-     "title": "Country Music 2 - Band/Solo",
-     "count": 6
-    },
-    {
-     "name": "CAR 289 TV/Radio/Themes/Jingles",
-     "code": "CAR 289",
-     "title": "TV/Radio/Themes/Jingles",
-     "count": 6
-    },
-    {
-     "name": "CAR 132 Orchestral Miniatures",
-     "code": "CAR 132",
-     "title": "Orchestral Miniatures",
-     "count": 5
-    },
-    {
-     "name": "CAR 147 Jingles Vol. 1",
-     "code": "CAR 147",
-     "title": "Jingles Vol. 1",
-     "count": 5
-    },
-    {
-     "name": "CAR 155 247 - Shorts/Links/Stings",
-     "code": "CAR 155 247",
-     "title": "Shorts/Links/Stings",
-     "count": 5
-    },
-    {
-     "name": "CAR 157 Third World/Wildlife/Rhythms",
-     "code": "CAR 157",
-     "title": "Third World/Wildlife/Rhythms",
-     "count": 5
-    },
-    {
-     "name": "CAR 218 Leisure/Travel/Lifestyles",
-     "code": "CAR 218",
-     "title": "Leisure/Travel/Lifestyles",
-     "count": 5
-    },
-    {
-     "name": "CAR 377 Crime Scene Investigation - 2",
-     "code": "CAR 377",
-     "title": "Crime Scene Investigation - 2",
-     "count": 5
-    },
-    {
-     "name": "CAR 153 National Music - Wales",
-     "code": "CAR 153",
-     "title": "National Music - Wales",
-     "count": 4
-    },
-    {
-     "name": "CAR 177 Shorts/Links/Stings 2",
-     "code": "CAR 177",
-     "title": "Shorts/Links/Stings 2",
-     "count": 4
-    },
-    {
-     "name": "CAR 179 Nostalgia/Romance",
-     "code": "CAR 179",
-     "title": "Nostalgia/Romance",
-     "count": 4
-    },
-    {
-     "name": "CAR 198 TV/Radio/Shorts/Stings",
-     "code": "CAR 198",
-     "title": "TV/Radio/Shorts/Stings",
-     "count": 4
-    },
-    {
-     "name": "CAR 224 American Impressions 2 - The History",
-     "code": "CAR 224",
-     "title": "American Impressions 2 - The History",
-     "count": 4
-    },
-    {
-     "name": "CAR 245 TV and Film Drama",
-     "code": "CAR 245",
-     "title": "TV and Film Drama",
-     "count": 4
-    },
-    {
-     "name": "CAR 413 Comedy/Children Ringtones",
-     "code": "CAR 413",
-     "title": "Comedy/Children Ringtones",
-     "count": 4
-    },
-    {
-     "name": "CAR 109 Themes & Underscores 2",
-     "code": "CAR 109",
-     "title": "Themes & Underscores 2",
-     "count": 3
-    },
-    {
-     "name": "CAR 163 Sit. Com/Leisure/Travel",
-     "code": "CAR 163",
-     "title": "Sit. Com/Leisure/Travel",
-     "count": 3
-    },
-    {
-     "name": "CAR 170 Jingles Vol. 2",
-     "code": "CAR 170",
-     "title": "Jingles Vol. 2",
-     "count": 3
-    },
-    {
-     "name": "CAR 172 Jingles Vol. 4",
-     "code": "CAR 172",
-     "title": "Jingles Vol. 4",
-     "count": 3
-    },
-    {
-     "name": "CAR 195 Prestige/Adventure/Corporate",
-     "code": "CAR 195",
-     "title": "Prestige/Adventure/Corporate",
-     "count": 3
-    },
-    {
-     "name": "CAR 206 Textures/Landscapes/Travel",
-     "code": "CAR 206",
-     "title": "Textures/Landscapes/Travel",
-     "count": 3
-    },
-    {
-     "name": "CAR 225 American Impressions 3 - Popular Culture",
-     "code": "CAR 225",
-     "title": "American Impressions 3 - Popular Culture",
-     "count": 3
-    },
-    {
-     "name": "CAR 232 Sports Action",
-     "code": "CAR 232",
-     "title": "Sports Action",
-     "count": 3
-    },
-    {
-     "name": "CAR 326 Garage/Dub/Jazz/Urban",
-     "code": "CAR 326",
-     "title": "Garage/Dub/Jazz/Urban",
-     "count": 3
-    },
-    {
-     "name": "CAR 347 Blues/Rock 'n' Roll/Pop",
-     "code": "CAR 347",
-     "title": "Blues/Rock 'n' Roll/Pop",
-     "count": 3
-    },
-    {
-     "name": "CAR 360 Solo Piano - Landscapes/New Age",
-     "code": "CAR 360",
-     "title": "Solo Piano - Landscapes/New Age",
-     "count": 3
-    },
-    {
-     "name": "CAR 407 Pop Kitsch Tijuana",
-     "code": "CAR 407",
-     "title": "Pop Kitsch Tijuana",
-     "count": 3
-    },
-    {
-     "name": "CAR 121 National Anthems",
-     "code": "CAR 121",
-     "title": "National Anthems",
-     "count": 2
-    },
-    {
-     "name": "CAR 140 Gospel/Trad. Jazz",
-     "code": "CAR 140",
-     "title": "Gospel/Trad. Jazz",
-     "count": 2
-    },
-    {
-     "name": "CAR 146 Palm Court Trio",
-     "code": "CAR 146",
-     "title": "Palm Court Trio",
-     "count": 2
-    },
-    {
-     "name": "CAR 162 Acoustic/Woodwind/Brass",
-     "code": "CAR 162",
-     "title": "Acoustic/Woodwind/Brass",
-     "count": 2
-    },
-    {
-     "name": "CAR 371 R&B/Urban Garage",
-     "code": "CAR 371",
-     "title": "R&B/Urban Garage",
-     "count": 2
-    },
-    {
-     "name": "CAR 399 Country USA - Dobro/Banjo",
-     "code": "CAR 399",
-     "title": "Country USA - Dobro/Banjo",
-     "count": 2
-    },
-    {
-     "name": "CAR 422 Ultimate Hollywood Trailers 1",
-     "code": "CAR 422",
-     "title": "Ultimate Hollywood Trailers 1",
-     "count": 2
-    },
-    {
-     "name": "CAR 105 Themes & Underscores 1",
-     "code": "CAR 105",
-     "title": "Themes & Underscores 1",
-     "count": 1
-    },
-    {
-     "name": "CAR 107 Romantic/Pastoral",
-     "code": "CAR 107",
-     "title": "Romantic/Pastoral",
-     "count": 1
-    },
-    {
-     "name": "CAR 115 Folk Music of England",
-     "code": "CAR 115",
-     "title": "Folk Music of England",
-     "count": 1
-    },
-    {
-     "name": "CAR 120 Themes Collection 3",
-     "code": "CAR 120",
-     "title": "Themes Collection 3",
-     "count": 1
-    },
-    {
-     "name": "CAR 122 National Music - Ireland",
-     "code": "CAR 122",
-     "title": "National Music - Ireland",
-     "count": 1
-    },
-    {
-     "name": "CAR 126 Dutch/Belgian Folk Music",
-     "code": "CAR 126",
-     "title": "Dutch/Belgian Folk Music",
-     "count": 1
-    },
-    {
-     "name": "CAR 130 Brass Band",
-     "code": "CAR 130",
-     "title": "Brass Band",
-     "count": 1
-    },
-    {
-     "name": "CAR 137 National Music - Scotland",
-     "code": "CAR 137",
-     "title": "National Music - Scotland",
-     "count": 1
-    },
-    {
-     "name": "CAR 138 24 Hour Television",
-     "code": "CAR 138 24",
-     "title": "Hour Television",
-     "count": 1
-    },
-    {
-     "name": "CAR 152 Sport/Documentary/Industry",
-     "code": "CAR 152",
-     "title": "Sport/Documentary/Industry",
-     "count": 1
-    },
-    {
-     "name": "CAR 175 World Marches",
-     "code": "CAR 175",
-     "title": "World Marches",
-     "count": 1
-    },
-    {
-     "name": "CAR 188 TV/Radio/Showbiz/Logos",
-     "code": "CAR 188",
-     "title": "TV/Radio/Showbiz/Logos",
-     "count": 1
-    },
-    {
-     "name": "CAR 190 Pop/TV/Leisure/Travel",
-     "code": "CAR 190",
-     "title": "Pop/TV/Leisure/Travel",
-     "count": 1
-    },
-    {
-     "name": "CAR 214 Modern Jazz",
-     "code": "CAR 214",
-     "title": "Modern Jazz",
-     "count": 1
-    },
-    {
-     "name": "CAR 217 National Flavours 4 - Africa/Middle East/India/Australasia",
-     "code": "CAR 217",
-     "title": "National Flavours 4 - Africa/Middle East/India/Australasia",
-     "count": 1
-    },
-    {
-     "name": "CAR 239 Sports",
-     "code": "CAR 239",
-     "title": "Sports",
-     "count": 1
-    },
-    {
-     "name": "CAR 240 Rock and Soul Classics",
-     "code": "CAR 240",
-     "title": "Rock and Soul Classics",
-     "count": 1
-    },
-    {
-     "name": "CAR 255 Unplugged - Acoustic Pop",
-     "code": "CAR 255",
-     "title": "Unplugged - Acoustic Pop",
-     "count": 1
-    },
-    {
-     "name": "CAR 265 Ireland - Contemporary/Gaelic",
-     "code": "CAR 265",
-     "title": "Ireland - Contemporary/Gaelic",
-     "count": 1
-    },
-    {
-     "name": "CAR 283 Rock Anthems",
-     "code": "CAR 283",
-     "title": "Rock Anthems",
-     "count": 1
-    },
-    {
-     "name": "CAR 290 Kitsch - Light & Easy/Cheesy",
-     "code": "CAR 290",
-     "title": "Kitsch - Light & Easy/Cheesy",
-     "count": 1
-    },
-    {
-     "name": "CAR 317 Scotland - Celtic Impressions",
-     "code": "CAR 317",
-     "title": "Scotland - Celtic Impressions",
-     "count": 1
-    },
-    {
-     "name": "CAR 337 TV Titbits - Game Shows",
-     "code": "CAR 337",
-     "title": "TV Titbits - Game Shows",
-     "count": 1
-    },
-    {
-     "name": "CAR 385 Pastoral - Traditional Gardens",
-     "code": "CAR 385",
-     "title": "Pastoral - Traditional Gardens",
-     "count": 1
-    },
-    {
-     "name": "CAR 421 Minimalist - The Art Of Nature",
-     "code": "CAR 421",
-     "title": "Minimalist - The Art Of Nature",
-     "count": 1
-    },
-    {
-     "name": "CAR 426 Seasons Of Innocence",
-     "code": "CAR 426",
-     "title": "Seasons Of Innocence",
-     "count": 1
-    },
-    {
-     "name": "CAR 427 Electro Swing",
-     "code": "CAR 427",
-     "title": "Electro Swing",
-     "count": 1
-    },
-    {
-     "name": "CLASS 013 Popular Mahler",
-     "code": "CLASS 013",
-     "title": "Popular Mahler",
-     "count": 1
-    }
-   ]
-  },
   {
    "name": "Bruton",
    "total": 1091,
@@ -2305,6 +1704,583 @@
      "name": "BVA 015 1980s Synth Dark Drama",
      "code": "BVA 015",
      "title": "1980s Synth Dark Drama",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "name": "CPM",
+   "total": 1070,
+   "n": 95,
+   "albums": [
+    {
+     "name": "CAR 176 Children/Comedy/Shorts 2",
+     "code": "CAR 176",
+     "title": "Children/Comedy/Shorts 2",
+     "count": 132
+    },
+    {
+     "name": "CAR 156 Children/Comedy/Shorts",
+     "code": "CAR 156",
+     "title": "Children/Comedy/Shorts",
+     "count": 86
+    },
+    {
+     "name": "CAR 150 Cartoon/Comedy/Children",
+     "code": "CAR 150",
+     "title": "Cartoon/Comedy/Children",
+     "count": 78
+    },
+    {
+     "name": "CAR 237 Fun/Novelty/Kids",
+     "code": "CAR 237",
+     "title": "Fun/Novelty/Kids",
+     "count": 68
+    },
+    {
+     "name": "CAR 136 Comedy/Cartoon/Children",
+     "code": "CAR 136",
+     "title": "Comedy/Cartoon/Children",
+     "count": 63
+    },
+    {
+     "name": "CAR 171 Jingles Vol. 3",
+     "code": "CAR 171",
+     "title": "Jingles Vol. 3",
+     "count": 55
+    },
+    {
+     "name": "CAR 257 Comedy/TV/Entertainment",
+     "code": "CAR 257",
+     "title": "Comedy/TV/Entertainment",
+     "count": 47
+    },
+    {
+     "name": "CAR 252 Fun and Games",
+     "code": "CAR 252",
+     "title": "Fun and Games",
+     "count": 40
+    },
+    {
+     "name": "CAR 159 Percussion/World Travel",
+     "code": "CAR 159",
+     "title": "Percussion/World Travel",
+     "count": 34
+    },
+    {
+     "name": "CAR 127 Leisure",
+     "code": "CAR 127",
+     "title": "Leisure",
+     "count": 31
+    },
+    {
+     "name": "CAR 135 Acoustic Expressions",
+     "code": "CAR 135",
+     "title": "Acoustic Expressions",
+     "count": 26
+    },
+    {
+     "name": "CAR 248 Jingles 5",
+     "code": "CAR 248",
+     "title": "Jingles 5",
+     "count": 23
+    },
+    {
+     "name": "CAR 303 Pastoral - Orchestral/Solo",
+     "code": "CAR 303",
+     "title": "Pastoral - Orchestral/Solo",
+     "count": 23
+    },
+    {
+     "name": "CAR 207 Children/Well Known Tunes 1",
+     "code": "CAR 207",
+     "title": "Children/Well Known Tunes 1",
+     "count": 17
+    },
+    {
+     "name": "CAR 229 The World of Christmas",
+     "code": "CAR 229",
+     "title": "The World of Christmas",
+     "count": 15
+    },
+    {
+     "name": "CAR 111 Barrel Organ/Squeezebox",
+     "code": "CAR 111",
+     "title": "Barrel Organ/Squeezebox",
+     "count": 14
+    },
+    {
+     "name": "CAR 300 Short Cuts and Idents",
+     "code": "CAR 300",
+     "title": "Short Cuts and Idents",
+     "count": 14
+    },
+    {
+     "name": "CAR 106 Wurlitzer & Mechanical Organs",
+     "code": "CAR 106",
+     "title": "Wurlitzer & Mechanical Organs",
+     "count": 13
+    },
+    {
+     "name": "CAR 154 Drama/Horror/Shorts",
+     "code": "CAR 154",
+     "title": "Drama/Horror/Shorts",
+     "count": 13
+    },
+    {
+     "name": "CAR 161 Organ - Dancing & Muzak",
+     "code": "CAR 161",
+     "title": "Organ - Dancing & Muzak",
+     "count": 13
+    },
+    {
+     "name": "CAR 219 Drama/Detective/Rock",
+     "code": "CAR 219",
+     "title": "Drama/Detective/Rock",
+     "count": 13
+    },
+    {
+     "name": "CAR 241 Harmonica and Banjo",
+     "code": "CAR 241",
+     "title": "Harmonica and Banjo",
+     "count": 13
+    },
+    {
+     "name": "CAR 310 Music for the Movies 2",
+     "code": "CAR 310",
+     "title": "Music for the Movies 2",
+     "count": 12
+    },
+    {
+     "name": "CAR 275 Music for the Movies 1",
+     "code": "CAR 275",
+     "title": "Music for the Movies 1",
+     "count": 9
+    },
+    {
+     "name": "CAR 379 Reggae & Ska",
+     "code": "CAR 379",
+     "title": "Reggae & Ska",
+     "count": 9
+    },
+    {
+     "name": "CAR 168 Drama Themes",
+     "code": "CAR 168",
+     "title": "Drama Themes",
+     "count": 8
+    },
+    {
+     "name": "CAR 183 Fanfares/Logos/Percussion",
+     "code": "CAR 183",
+     "title": "Fanfares/Logos/Percussion",
+     "count": 8
+    },
+    {
+     "name": "CAR 346 Christmas Treats",
+     "code": "CAR 346",
+     "title": "Christmas Treats",
+     "count": 8
+    },
+    {
+     "name": "CAR 112 Bottleneck & Electric Guitar",
+     "code": "CAR 112",
+     "title": "Bottleneck & Electric Guitar",
+     "count": 7
+    },
+    {
+     "name": "CAR 323 Rock Songs/Instrumentals",
+     "code": "CAR 323",
+     "title": "Rock Songs/Instrumentals",
+     "count": 7
+    },
+    {
+     "name": "CAR 125 Shorts/Links/Stings",
+     "code": "CAR 125",
+     "title": "Shorts/Links/Stings",
+     "count": 6
+    },
+    {
+     "name": "CAR 133 Jingles/Idents",
+     "code": "CAR 133",
+     "title": "Jingles/Idents",
+     "count": 6
+    },
+    {
+     "name": "CAR 208 Children/Well Known Tunes 2",
+     "code": "CAR 208",
+     "title": "Children/Well Known Tunes 2",
+     "count": 6
+    },
+    {
+     "name": "CAR 282 Drama/Suspense/Tragedy/War",
+     "code": "CAR 282",
+     "title": "Drama/Suspense/Tragedy/War",
+     "count": 6
+    },
+    {
+     "name": "CAR 288 Country Music 2 - Band/Solo",
+     "code": "CAR 288",
+     "title": "Country Music 2 - Band/Solo",
+     "count": 6
+    },
+    {
+     "name": "CAR 289 TV/Radio/Themes/Jingles",
+     "code": "CAR 289",
+     "title": "TV/Radio/Themes/Jingles",
+     "count": 6
+    },
+    {
+     "name": "CAR 132 Orchestral Miniatures",
+     "code": "CAR 132",
+     "title": "Orchestral Miniatures",
+     "count": 5
+    },
+    {
+     "name": "CAR 147 Jingles Vol. 1",
+     "code": "CAR 147",
+     "title": "Jingles Vol. 1",
+     "count": 5
+    },
+    {
+     "name": "CAR 155 247 - Shorts/Links/Stings",
+     "code": "CAR 155 247",
+     "title": "Shorts/Links/Stings",
+     "count": 5
+    },
+    {
+     "name": "CAR 157 Third World/Wildlife/Rhythms",
+     "code": "CAR 157",
+     "title": "Third World/Wildlife/Rhythms",
+     "count": 5
+    },
+    {
+     "name": "CAR 218 Leisure/Travel/Lifestyles",
+     "code": "CAR 218",
+     "title": "Leisure/Travel/Lifestyles",
+     "count": 5
+    },
+    {
+     "name": "CAR 377 Crime Scene Investigation - 2",
+     "code": "CAR 377",
+     "title": "Crime Scene Investigation - 2",
+     "count": 5
+    },
+    {
+     "name": "CAR 153 National Music - Wales",
+     "code": "CAR 153",
+     "title": "National Music - Wales",
+     "count": 4
+    },
+    {
+     "name": "CAR 177 Shorts/Links/Stings 2",
+     "code": "CAR 177",
+     "title": "Shorts/Links/Stings 2",
+     "count": 4
+    },
+    {
+     "name": "CAR 179 Nostalgia/Romance",
+     "code": "CAR 179",
+     "title": "Nostalgia/Romance",
+     "count": 4
+    },
+    {
+     "name": "CAR 198 TV/Radio/Shorts/Stings",
+     "code": "CAR 198",
+     "title": "TV/Radio/Shorts/Stings",
+     "count": 4
+    },
+    {
+     "name": "CAR 224 American Impressions 2 - The History",
+     "code": "CAR 224",
+     "title": "American Impressions 2 - The History",
+     "count": 4
+    },
+    {
+     "name": "CAR 245 TV and Film Drama",
+     "code": "CAR 245",
+     "title": "TV and Film Drama",
+     "count": 4
+    },
+    {
+     "name": "CAR 413 Comedy/Children Ringtones",
+     "code": "CAR 413",
+     "title": "Comedy/Children Ringtones",
+     "count": 4
+    },
+    {
+     "name": "CAR 109 Themes & Underscores 2",
+     "code": "CAR 109",
+     "title": "Themes & Underscores 2",
+     "count": 3
+    },
+    {
+     "name": "CAR 163 Sit. Com/Leisure/Travel",
+     "code": "CAR 163",
+     "title": "Sit. Com/Leisure/Travel",
+     "count": 3
+    },
+    {
+     "name": "CAR 170 Jingles Vol. 2",
+     "code": "CAR 170",
+     "title": "Jingles Vol. 2",
+     "count": 3
+    },
+    {
+     "name": "CAR 172 Jingles Vol. 4",
+     "code": "CAR 172",
+     "title": "Jingles Vol. 4",
+     "count": 3
+    },
+    {
+     "name": "CAR 195 Prestige/Adventure/Corporate",
+     "code": "CAR 195",
+     "title": "Prestige/Adventure/Corporate",
+     "count": 3
+    },
+    {
+     "name": "CAR 206 Textures/Landscapes/Travel",
+     "code": "CAR 206",
+     "title": "Textures/Landscapes/Travel",
+     "count": 3
+    },
+    {
+     "name": "CAR 225 American Impressions 3 - Popular Culture",
+     "code": "CAR 225",
+     "title": "American Impressions 3 - Popular Culture",
+     "count": 3
+    },
+    {
+     "name": "CAR 232 Sports Action",
+     "code": "CAR 232",
+     "title": "Sports Action",
+     "count": 3
+    },
+    {
+     "name": "CAR 326 Garage/Dub/Jazz/Urban",
+     "code": "CAR 326",
+     "title": "Garage/Dub/Jazz/Urban",
+     "count": 3
+    },
+    {
+     "name": "CAR 347 Blues/Rock 'n' Roll/Pop",
+     "code": "CAR 347",
+     "title": "Blues/Rock 'n' Roll/Pop",
+     "count": 3
+    },
+    {
+     "name": "CAR 360 Solo Piano - Landscapes/New Age",
+     "code": "CAR 360",
+     "title": "Solo Piano - Landscapes/New Age",
+     "count": 3
+    },
+    {
+     "name": "CAR 407 Pop Kitsch Tijuana",
+     "code": "CAR 407",
+     "title": "Pop Kitsch Tijuana",
+     "count": 3
+    },
+    {
+     "name": "CAR 121 National Anthems",
+     "code": "CAR 121",
+     "title": "National Anthems",
+     "count": 2
+    },
+    {
+     "name": "CAR 140 Gospel/Trad. Jazz",
+     "code": "CAR 140",
+     "title": "Gospel/Trad. Jazz",
+     "count": 2
+    },
+    {
+     "name": "CAR 146 Palm Court Trio",
+     "code": "CAR 146",
+     "title": "Palm Court Trio",
+     "count": 2
+    },
+    {
+     "name": "CAR 162 Acoustic/Woodwind/Brass",
+     "code": "CAR 162",
+     "title": "Acoustic/Woodwind/Brass",
+     "count": 2
+    },
+    {
+     "name": "CAR 371 R&B/Urban Garage",
+     "code": "CAR 371",
+     "title": "R&B/Urban Garage",
+     "count": 2
+    },
+    {
+     "name": "CAR 399 Country USA - Dobro/Banjo",
+     "code": "CAR 399",
+     "title": "Country USA - Dobro/Banjo",
+     "count": 2
+    },
+    {
+     "name": "CAR 422 Ultimate Hollywood Trailers 1",
+     "code": "CAR 422",
+     "title": "Ultimate Hollywood Trailers 1",
+     "count": 2
+    },
+    {
+     "name": "CAR 105 Themes & Underscores 1",
+     "code": "CAR 105",
+     "title": "Themes & Underscores 1",
+     "count": 1
+    },
+    {
+     "name": "CAR 107 Romantic/Pastoral",
+     "code": "CAR 107",
+     "title": "Romantic/Pastoral",
+     "count": 1
+    },
+    {
+     "name": "CAR 115 Folk Music of England",
+     "code": "CAR 115",
+     "title": "Folk Music of England",
+     "count": 1
+    },
+    {
+     "name": "CAR 120 Themes Collection 3",
+     "code": "CAR 120",
+     "title": "Themes Collection 3",
+     "count": 1
+    },
+    {
+     "name": "CAR 122 National Music - Ireland",
+     "code": "CAR 122",
+     "title": "National Music - Ireland",
+     "count": 1
+    },
+    {
+     "name": "CAR 126 Dutch/Belgian Folk Music",
+     "code": "CAR 126",
+     "title": "Dutch/Belgian Folk Music",
+     "count": 1
+    },
+    {
+     "name": "CAR 130 Brass Band",
+     "code": "CAR 130",
+     "title": "Brass Band",
+     "count": 1
+    },
+    {
+     "name": "CAR 137 National Music - Scotland",
+     "code": "CAR 137",
+     "title": "National Music - Scotland",
+     "count": 1
+    },
+    {
+     "name": "CAR 138 24 Hour Television",
+     "code": "CAR 138 24",
+     "title": "Hour Television",
+     "count": 1
+    },
+    {
+     "name": "CAR 152 Sport/Documentary/Industry",
+     "code": "CAR 152",
+     "title": "Sport/Documentary/Industry",
+     "count": 1
+    },
+    {
+     "name": "CAR 175 World Marches",
+     "code": "CAR 175",
+     "title": "World Marches",
+     "count": 1
+    },
+    {
+     "name": "CAR 188 TV/Radio/Showbiz/Logos",
+     "code": "CAR 188",
+     "title": "TV/Radio/Showbiz/Logos",
+     "count": 1
+    },
+    {
+     "name": "CAR 190 Pop/TV/Leisure/Travel",
+     "code": "CAR 190",
+     "title": "Pop/TV/Leisure/Travel",
+     "count": 1
+    },
+    {
+     "name": "CAR 214 Modern Jazz",
+     "code": "CAR 214",
+     "title": "Modern Jazz",
+     "count": 1
+    },
+    {
+     "name": "CAR 217 National Flavours 4 - Africa/Middle East/India/Australasia",
+     "code": "CAR 217",
+     "title": "National Flavours 4 - Africa/Middle East/India/Australasia",
+     "count": 1
+    },
+    {
+     "name": "CAR 239 Sports",
+     "code": "CAR 239",
+     "title": "Sports",
+     "count": 1
+    },
+    {
+     "name": "CAR 240 Rock and Soul Classics",
+     "code": "CAR 240",
+     "title": "Rock and Soul Classics",
+     "count": 1
+    },
+    {
+     "name": "CAR 255 Unplugged - Acoustic Pop",
+     "code": "CAR 255",
+     "title": "Unplugged - Acoustic Pop",
+     "count": 1
+    },
+    {
+     "name": "CAR 265 Ireland - Contemporary/Gaelic",
+     "code": "CAR 265",
+     "title": "Ireland - Contemporary/Gaelic",
+     "count": 1
+    },
+    {
+     "name": "CAR 283 Rock Anthems",
+     "code": "CAR 283",
+     "title": "Rock Anthems",
+     "count": 1
+    },
+    {
+     "name": "CAR 290 Kitsch - Light & Easy/Cheesy",
+     "code": "CAR 290",
+     "title": "Kitsch - Light & Easy/Cheesy",
+     "count": 1
+    },
+    {
+     "name": "CAR 317 Scotland - Celtic Impressions",
+     "code": "CAR 317",
+     "title": "Scotland - Celtic Impressions",
+     "count": 1
+    },
+    {
+     "name": "CAR 337 TV Titbits - Game Shows",
+     "code": "CAR 337",
+     "title": "TV Titbits - Game Shows",
+     "count": 1
+    },
+    {
+     "name": "CAR 385 Pastoral - Traditional Gardens",
+     "code": "CAR 385",
+     "title": "Pastoral - Traditional Gardens",
+     "count": 1
+    },
+    {
+     "name": "CAR 421 Minimalist - The Art Of Nature",
+     "code": "CAR 421",
+     "title": "Minimalist - The Art Of Nature",
+     "count": 1
+    },
+    {
+     "name": "CAR 426 Seasons Of Innocence",
+     "code": "CAR 426",
+     "title": "Seasons Of Innocence",
+     "count": 1
+    },
+    {
+     "name": "CAR 427 Electro Swing",
+     "code": "CAR 427",
+     "title": "Electro Swing",
      "count": 1
     }
    ]
@@ -16292,6 +16268,37 @@
      "name": "SH 048 Mystic Stars",
      "code": "SH 048",
      "title": "Mystic Stars",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "name": "CPM Classical Series",
+   "total": 36,
+   "n": 4,
+   "albums": [
+    {
+     "name": "CLASS 011 Classical Selection 2",
+     "code": "CLASS 011",
+     "title": "Classical Selection 2",
+     "count": 20
+    },
+    {
+     "name": "CLASS 008 Mendelssohn / Grieg",
+     "code": "CLASS 008",
+     "title": "Mendelssohn / Grieg",
+     "count": 8
+    },
+    {
+     "name": "CLASS 037 What a Classic Three",
+     "code": "CLASS 037",
+     "title": "What a Classic Three",
+     "count": 7
+    },
+    {
+     "name": "CLASS 013 Popular Mahler",
+     "code": "CLASS 013",
+     "title": "Popular Mahler",
      "count": 1
     }
    ]

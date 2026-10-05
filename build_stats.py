@@ -60,11 +60,12 @@ def brand_of(lib):
         p = re.sub(r'\s+classical music$', '', p, flags=re.I)             # Cavendish Music classical music → Cavendish
         p = re.sub(r'\s+(Music\s+)?classical$', '', p, flags=re.I)        # Parry Music Classical → Parry
         p = re.sub(r'\s+Music$', '', p, flags=re.I)          # 寫 Bruton 不要 Music
-        p = re.sub(r'\s+(Main|Classical) Series$', '', p)   # CPM Main/Classical Series → CPM（Archive 另成一系列）
+        p = re.sub(r'\s+Main Series$', '', p)   # CPM Main Series → CPM（Archive／Classical 各成一系列）
         p = p.strip()
         parts = p.split()
-        if len(parts) > 1 and parts[0] in ('CPM', 'KPM') and p != 'CPM Archive Series':
-            p = parts[0]            # CPM/KPM 各種系列→單一廠牌（但 CPM Archive Series＝CAS，另立一系列）
+        if len(parts) > 1 and parts[0] == 'KPM':
+            p = 'KPM'                # KPM 各種系列→單一廠牌
+        # CPM 不併：Main→CPM、Archive Series→CAS、Classical Series→CLASS（各自一系列）
         if len(p) < 3 or p.lower() in ('the', 'a', 'an'):
             p = pmid          # 避免去尾後只剩空／『The』這類沒意義的名字
         p = ALIAS.get(p.lower(), p)
