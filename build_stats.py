@@ -264,6 +264,8 @@ def main():
         lab[b]['alb'][name] = lab[b]['alb'].get(name, 0) + cnt
     labels = []
     for name, d in lab.items():
+        if name == UNKNOWN:          # 孝瓏：未標廠牌的專輯不列
+            continue
         albums = [{'name': k, 'count': v} for k, v in d['alb'].items()]
         albums.sort(key=lambda a: -a['count'])
         labels.append({'name': name, 'total': d['total'], 'n': len(albums), 'albums': albums})

@@ -13,7 +13,6 @@
     <div class="sub">知識平台網・罐頭音樂研究所　｜　依全站索引統計（資料日 <span id="srcdate">—</span>）<br>
       先看<b>廠牌</b>，點進去再看該廠牌的<b>專輯</b>。</div>
     <div class="chips" id="chips"></div>
-    <div class="note" id="unknown" style="display:none"></div>
     <div class="err" id="err">載入 stats.json 失敗。請確認與 index.html 同目錄，並以 http(s) 開啟。</div>
   </header>
 
@@ -70,15 +69,7 @@ fetch('stats.json',{cache:'no-store'}).then(r=>{ if(!r.ok) throw new Error(r.sta
     ['廠牌數', s.labels], ['專輯數', s.albums], ['音樂頁面數', s.pages], ['曲目紀錄筆數', s.records]
   ].map(([l,n])=>`<div class="chip"><div class="n">${NUM(n)}</div><div class="l">${l}</div></div>`).join('');
 
-  const unk = d.labels.filter(l => l.name.startsWith('（'))[0];
-  const labels = d.labels.filter(l => !l.name.startsWith('（'));
-
-  if (unk){
-    const n = document.getElementById('unknown');
-    n.style.display = 'block';
-    n.innerHTML = `⚠️ 有 <b>${NUM(unk.n)}</b> 張專輯（使用 <b>${NUM(unk.total)}</b> 頁）在資料裡<b>沒有標廠牌</b>，
-      未列入排行 —— <a href="label.html?b=${enc(unk.name)}">點此查看 ${unk.name}</a>。之後可補齊。`;
-  }
+  const labels = d.labels;
 
   document.getElementById('labcount').textContent = NUM(d.labels.length);
   const max = d.labels[0] ? d.labels[0].total : 1;
