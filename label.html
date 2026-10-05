@@ -63,7 +63,7 @@ fetch('stats.json',{cache:'no-store'}).then(r=>{ if(!r.ok) throw new Error(r.sta
     const max = list.length ? Math.max(...list.map(a=>a.count)) : 1;
     document.getElementById('alist').innerHTML = list.map((a,i)=>`
       <tr><td><span class="rank">${i+1}</span></td><td class="code">${a.code}</td><td>${a.title||'<span class="muted">—</span>'}</td>
-        <td class="n">${NUM(a.count)}</td>
+        <td class="n${a.count ? '' : ' zero'}">${NUM(a.count)}</td>
         <td><span class="bar-mini" style="width:${Math.round(a.count/max*170)}px;background:#12b5a5"></span></td></tr>`).join('');
   }
   renderAlb();

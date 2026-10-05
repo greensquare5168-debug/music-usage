@@ -139,16 +139,14 @@ def main():
     # 使用頁數（站台現況）
     rows = []
     for b, raw in albums:
-        tracks = md.get(raw)
-        if not tracks:
-            continue
+        tracks = md.get(raw, [])
         used = set()
         for t in tracks:
             for p, ts in pg.items():
                 if t in ts:
                     used.add(p)
-        if used:
-            rows.append((b, norm_album(raw), len(used)))
+        # 沒用過的照樣列，使用頁數＝0（孝瓏：應該顯示 0 不是 1）
+        rows.append((b, norm_album(raw), len(used)))
 
     lab = collections.defaultdict(lambda: collections.OrderedDict())
     for b, name, cnt in rows:
