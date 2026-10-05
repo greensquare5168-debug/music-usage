@@ -16987,10 +16987,6 @@
    "count": 50
   },
   {
-   "name": "power-house",
-   "count": 48
-  },
-  {
    "name": "狗狗週記",
    "count": 44
   },
@@ -17007,6 +17003,10 @@
    "count": 33
   },
   {
+   "name": "古古食",
+   "count": 32
+  },
+  {
    "name": "流言追追追",
    "count": 30
   },
@@ -17015,24 +17015,12 @@
    "count": 30
   },
   {
-   "name": "point",
-   "count": 27
-  },
-  {
-   "name": "atmosphere",
-   "count": 26
-  },
-  {
    "name": "巧連智遊戲光碟",
    "count": 24
   },
   {
    "name": "鹹魚小隊",
    "count": 21
-  },
-  {
-   "name": "match",
-   "count": 20
   },
   {
    "name": "yoyo嘻遊記",
@@ -17049,6 +17037,46 @@
   {
    "name": "原來如此食物的由來",
    "count": 13
+  },
+  {
+   "name": "超級總動員",
+   "count": 12
+  },
+  {
+   "name": "ronald叔叔童樂會",
+   "count": 4
+  },
+  {
+   "name": "黑蕉fun輕鬆",
+   "count": 3
+  },
+  {
+   "name": "momo歡樂谷",
+   "count": 3
+  },
+  {
+   "name": "原來如此客語教學",
+   "count": 2
+  },
+  {
+   "name": "阿猴出任務",
+   "count": 1
+  },
+  {
+   "name": "阿迪牯遊客記",
+   "count": 1
+  },
+  {
+   "name": "科學偵探團",
+   "count": 1
+  },
+  {
+   "name": "好好玩自然",
+   "count": 1
+  },
+  {
+   "name": "就是要play",
+   "count": 1
   }
  ]
 }

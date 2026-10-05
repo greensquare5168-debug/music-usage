@@ -73,6 +73,13 @@ def parse_albums(path):
             rows.append((b, name, cnt))
     return rows
 
+def norm_program(s):
+    """節目名正規化：去掉集數後綴（例：古古食-ep-01什麼… → 古古食）"""
+    s = (s or '').strip()
+    s = re.sub(r'[-_ ]?ep[-_ ]?\d+.*$', '', s, flags=re.I)
+    s = re.sub(r'[-_ .]+$', '', s).strip()
+    return s
+
 def main():
     tracks, composers = parse_rank(RANK)
     rows = parse_albums(ALBUM)
@@ -114,8 +121,23 @@ def main():
 
     usage_plat = sorted(((k, len(v)) for k, v in pl_pages.items()
                          if k and k not in ('圖書館音樂', 'view')), key=lambda x: -x[1])
-    programs = sorted(((k, len(v)) for k, v in pr_pages.items()
-                       if k and not k.startswith('arcadia')), key=lambda x: -x[1])[:20]
+    # 節目分布：只列真正的「節目名稱」——限真實電視平台，
+    # 排除『圖書館音樂』底下的分類（power-house / point / atmosphere / match / arcadia…＝音樂廠牌，不是節目）
+    REAL_PLAT = {'yoyotv', '巧連智', 'momo親子台', '公視', '古古食'}
+    prog_pages = collections.defaultdict(set)
+    prog_plat = collections.defaultdict(set)
+    for line in open(IDX, encoding='utf-8'):
+        line = line.strip()
+        if not line: continue
+        d = json.loads(line)
+        k = norm_program(d.get('program', ''))
+        if not k: continue
+        p = d.get('url_path') or d.get('page_title')
+        prog_pages[k].add(p)
+        prog_plat[k].add(d.get('platform', ''))
+    programs = sorted(((k, len(v)) for k, v in prog_pages.items()
+                       if prog_plat[k] and prog_plat[k] <= REAL_PLAT),
+                      key=lambda x: -x[1])
 
     data = {
         'generated': datetime.date.today().isoformat(),

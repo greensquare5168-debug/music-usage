@@ -38,3 +38,9 @@ tbody tr:hover{background:#f7f9ff}
 .bar-mini{height:7px;border-radius:4px;background:#3b6ef6;display:inline-block;vertical-align:middle}
 footer{margin-top:26px;color:var(--muted);font-size:12px;line-height:1.7}
 code{background:#eef1f7;padding:1px 5px;border-radius:5px;font-size:12px}
+.nav{display:flex;gap:6px;margin:0 0 16px;flex-wrap:wrap}
+.nav a{padding:7px 16px;border-radius:999px;font-size:13.5px;border:1px solid var(--line);
+       background:var(--card);color:var(--muted)}
+.nav a.on{background:var(--brand);border-color:var(--brand);color:#fff;font-weight:600}
+.nav a:hover{text-decoration:none;border-color:var(--brand);color:var(--brand)}
+.nav a.on:hover{color:#fff}
