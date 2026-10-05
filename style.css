@@ -35,6 +35,8 @@ th{color:var(--muted);font-weight:600;font-size:12px}
 td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
 tbody tr:hover{background:#f7f9ff}
 .miss{color:#b3261e;font-size:12.5px}
+.muted{color:#aab2c0}
+.code{font-variant-numeric:tabular-nums;white-space:nowrap;color:#3d4657}
 .seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;vertical-align:middle}
 .seg button{border:0;background:var(--card);color:var(--muted);font-size:12.5px;padding:4px 12px;cursor:pointer;
            font-family:inherit}

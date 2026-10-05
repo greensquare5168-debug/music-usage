@@ -246,6 +246,23 @@ def build_tracks(t2a):
     out.sort(key=lambda x: (-x['count'], x['name']))
     return out
 
+def split_album_name(name):
+    """專輯名 → (編號, 名稱)：例 CAR 176 Children/Comedy/Shorts 2 → ('CAR 176','Children/Comedy/Shorts 2')"""
+    toks = name.split(' ')
+    idx = None
+    for i, t in enumerate(toks):
+        if any(c.isdigit() for c in t):
+            idx = i
+            break
+    if idx is None:
+        return name, ''
+    k = idx
+    while k + 1 < len(toks) and re.fullmatch(r'\d{1,4}', toks[k + 1]):
+        k += 1
+    code = ' '.join(toks[:k + 1])
+    title = ' '.join(toks[k + 1:]).lstrip('- ').strip()
+    return code, title
+
 def norm_program(s):
     """節目名正規化：去掉集數後綴（例：古古食-ep-01什麼… → 古古食）"""
     s = (s or '').strip()
@@ -267,7 +284,8 @@ def main():
     for name, d in lab.items():
         if name == UNKNOWN:          # 孝瓏：未標廠牌的專輯不列
             continue
-        albums = [{'name': k, 'count': v} for k, v in d['alb'].items()]
+        albums = [{'name': k, 'code': split_album_name(k)[0], 'title': split_album_name(k)[1],
+                   'count': v} for k, v in d['alb'].items()]
         albums.sort(key=lambda a: -a['count'])
         labels.append({'name': name, 'total': d['total'], 'n': len(albums), 'albums': albums})
     labels.sort(key=lambda x: -x['total'])
@@ -277,7 +295,8 @@ def main():
     for b, name, cnt in rows:
         if name not in best or cnt > best[name]:
             best[name] = cnt
-    top_albums = [{'name': k, 'count': v} for k, v in
+    top_albums = [{'name': k, 'code': split_album_name(k)[0], 'title': split_album_name(k)[1],
+                   'count': v} for k, v in
                   sorted(best.items(), key=lambda x: -x[1])[:30]]
 
     # 索引：平台 / 節目
