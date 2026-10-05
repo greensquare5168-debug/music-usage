@@ -4,34 +4,34 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>音樂使用狀況｜曲目分布</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="wrap">
   <nav class="nav">
-    <a class="" href="index.html">廠牌 → 專輯</a>
+    <a href="index.html">廠牌 → 專輯</a>
     <a class="on" href="tracks.html">曲目分布</a>
-    <a class="" href="programs.html">節目分布</a>
-    <a class="" href="platforms.html">平台分布</a>
+    <a href="programs.html">節目分布</a>
+    <a href="platforms.html">平台分布</a>
   </nav>
   <header>
     <h1>🎼 曲目分布</h1>
-    <div class="sub">知識平台網・罐頭音樂研究所　｜　各曲目被使用的頁數（資料日 <span id="srcdate">—</span>）<br>
-      只列<b>曲目名稱</b>與所屬<b>專輯</b>；不含作者。</div>
-    <div class="err" id="err">載入 stats.json 失敗。請確認與本頁同目錄，並以 http(s) 開啟。</div>
+    <div class="sub">知識平台網・罐頭音樂研究所　｜　全部曲目與所屬專輯、使用頁數（資料日 <span id="srcdate">—</span>）<br>
+      只列<b>曲目名稱</b>與<b>專輯</b>；不含作者。</div>
+    <div class="chips" id="chips"></div>
+    <div style="margin:14px 0 0">
+      <input id="q" type="search" placeholder="搜尋曲目或專輯…"
+        style="width:100%;max-width:420px;padding:10px 14px;border:1px solid var(--line);
+               border-radius:10px;font-size:14px;outline:none">
+    </div>
+    <div class="err" id="err">載入 tracks.json 失敗。請確認與本頁同目錄，並以 http(s) 開啟。</div>
   </header>
 
   <div class="grid">
     <div class="card wide">
-      <h2>曲目使用排行</h2>
-      <p class="hint">依「站上使用頁數」排序</p>
-      <div class="cbox" id="box"></div>
-    </div>
-    <div class="card wide">
       <h2>曲目清單</h2>
-      <p class="hint">共 <span id="pc">—</span> 首曲目</p>
-      <table><thead><tr><th style="width:44px">#</th><th>曲目</th><th>專輯</th><th class="n">使用頁數</th><th style="width:150px"></th></tr></thead>
+      <p class="hint">顯示 <span id="shown">—</span>／<span id="total">—</span> 首（依使用頁數排序）</p>
+      <table><thead><tr><th style="width:44px">#</th><th>曲目</th><th>專輯</th><th class="n">使用頁數</th></tr></thead>
         <tbody id="tb"></tbody></table>
     </div>
   </div>
@@ -39,33 +39,41 @@
 </div>
 <script>
 const NUM = n => n.toLocaleString('en-US');
-fetch('stats.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json();})
-.then(d=>{
-  document.getElementById('srcdate').textContent=d.source_date;
-  document.getElementById('gen').textContent=d.generated;
-  const rows=d.topTracks;
-  const box=document.getElementById('box');
-  box.style.height=Math.max(300,rows.length*26)+'px';
-  const ctx=document.createElement('canvas'); box.appendChild(ctx);
-  new Chart(ctx,{type:'bar',
-    data:{labels:rows.map(p=>p.name),datasets:[{data:rows.map(p=>p.count),
-      backgroundColor:'#3b6ef6',borderRadius:5,borderSkipped:false,maxBarThickness:20}]},
-    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,animation:{duration:600},
-      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>' '+NUM(c.raw)+' 頁'}}},
-      scales:{x:{beginAtZero:true,grid:{color:'#eef1f7'},ticks:{font:{size:11},color:'#6b7688',precision:0}},
-              y:{grid:{display:false},ticks:{font:{size:11},color:'#1e2430',autoSkip:false}}}}});
-  document.getElementById('pc').textContent=NUM(rows.length);
-  const max=rows[0]?rows[0].count:1;
-  document.getElementById('tb').innerHTML=rows.map((p,i)=>{
-    const alb = (p.albums && p.albums.length)
-      ? p.albums.join('、') : '<span class="miss">（專輯待補）</span>';
-    return `
-    <tr><td><span class="rank">${i+1}</span></td><td>${p.name}</td>
-      <td>${alb}</td>
-      <td class="n">${NUM(p.count)}</td>
-      <td><span class="bar-mini" style="width:${Math.round(p.count/max*170)}px"></span></td></tr>`;
+const CAP = 600;                     // 一次最多畫幾列（搜尋可找全部）
+let ALL = [], maxC = 1;
+const tbody = document.getElementById('tb');
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+function render(list){
+  const rows = list.slice(0, CAP);
+  maxC = ALL.length ? ALL[0].count : 1;
+  tbody.innerHTML = rows.map((p,i)=>{
+    const alb = p.albums && p.albums.length ? esc(p.albums.join('、'))
+              : '<span class="miss">（專輯待補）</span>';
+    return `<tr><td><span class="rank">${i+1}</span></td><td>${esc(p.name)}</td>
+      <td>${alb}</td><td class="n">${NUM(p.count)}</td></tr>`;
   }).join('');
-}).catch(e=>{document.getElementById('err').style.display='block';console.error(e);});
+  document.getElementById('shown').textContent = NUM(Math.min(list.length, CAP));
+  document.getElementById('total').textContent = NUM(ALL.length);
+}
+
+fetch('tracks.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json();})
+.then(d=>{
+  ALL = d.tracks;
+  document.getElementById('srcdate').textContent = d.source_date;
+  const withAlb = ALL.filter(t=>t.albums && t.albums.length).length;
+  document.getElementById('chips').innerHTML = [
+    ['曲目數', d.count], ['已對到專輯', withAlb],
+    ['最多使用頁數', ALL[0] ? ALL[0].count : 0]
+  ].map(([l,n])=>`<div class="chip"><div class="n">${NUM(n)}</div><div class="l">${l}</div></div>`).join('');
+  render(ALL);
+  document.getElementById('q').addEventListener('input', ev=>{
+    const q = ev.target.value.trim().toLowerCase();
+    if(!q){ render(ALL); return; }
+    render(ALL.filter(t => t.name.toLowerCase().includes(q) ||
+      (t.albums||[]).some(a=>a.toLowerCase().includes(q))));
+  });
+}).catch(e=>{ document.getElementById('err').style.display='block'; console.error(e); });
 </script>
 </body>
 </html>

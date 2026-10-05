@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>音樂使用狀況｜廠牌 → 專輯</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,12 +24,6 @@
   </header>
 
   <div class="grid">
-    <div class="card wide">
-      <h2>廠牌使用排行 TOP 40</h2>
-      <p class="hint">依「站上使用頁數」合計；點條形即可進入該廠牌的專輯</p>
-      <div class="cbox" id="box-labels"></div>
-    </div>
-
     <div class="card wide">
       <h2>全部廠牌（點列進入專輯）</h2>
       <p class="hint">共 <span id="labcount">—</span> 個廠牌</p>
@@ -85,9 +78,6 @@ fetch('stats.json',{cache:'no-store'}).then(r=>{ if(!r.ok) throw new Error(r.sta
 
   const unk = d.labels.filter(l => l.name.startsWith('（'))[0];
   const labels = d.labels.filter(l => !l.name.startsWith('（'));
-  const top = labels.slice(0, 40);
-  makeBar('box-labels', top.map(l=>l.name), top.map(l=>l.total), '#3b6ef6',
-          Math.max(300, top.length*26), i => go(top[i].name));
 
   if (unk){
     const n = document.getElementById('unknown');

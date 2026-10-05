@@ -164,6 +164,39 @@ def load_track_album_map():
         out[k] = sorted(primary[k] or m[k])
     return out
 
+ROLE_PREFIX = {'標題', '片頭曲', '片尾曲', '簡介', '進廣告', '插曲', '主題曲', '配樂',
+               '片頭', '片尾', '開頭', '結尾', '前奏', '尾奏', 'BGM'}
+
+def norm_track(t):
+    """曲目名：去掉段落前綴（例：片尾曲 擁有 → 擁有；標題 Toccata Singers → Toccata Singers）"""
+    t = (t or '').strip()
+    parts = t.split(' ', 1)
+    if len(parts) == 2 and parts[0] in ROLE_PREFIX:
+        return parts[1].strip()
+    return t
+
+def build_tracks(t2a):
+    """全站曲目（曲名 → 出現頁數＋所屬專輯）"""
+    tp = collections.defaultdict(set)
+    for line in open(IDX, encoding='utf-8'):
+        line = line.strip()
+        if not line:
+            continue
+        d = json.loads(line)
+        t = norm_track(d.get('track', ''))
+        if not t:
+            continue
+        tp[t].add(d.get('url_path') or d.get('page_title'))
+    out = []
+    for name, pages in tp.items():
+        item = {'name': name, 'count': len(pages)}
+        alb = sorted(t2a.get(name.lower(), []))
+        if alb:
+            item['albums'] = alb
+        out.append(item)
+    out.sort(key=lambda x: (-x['count'], x['name']))
+    return out
+
 def norm_program(s):
     """節目名正規化：去掉集數後綴（例：古古食-ep-01什麼… → 古古食）"""
     s = (s or '').strip()
@@ -236,16 +269,18 @@ def main():
                     'albums': len(best), 'tracks': len(tracks)},
         'labels': labels,
         'topAlbums': top_albums,
-        'topTracks': [{'name': t['name'], 'count': t['count'],
-                       'albums': sorted(t2a.get(t['name'].lower(), []))}
-                      for t in tracks[:30]],
         'platforms': [{'name': k, 'count': v} for k, v in usage_plat],
         'programs': [{'name': k, 'count': v} for k, v in programs],
     }
     with open(os.path.join(BASE, 'stats.json'), 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=1)
-    print('OK labels=%d albums=%d pages=%d records=%d'
-          % (len(labels), len(best), len(all_pages), records))
+
+    tracks_full = build_tracks(t2a)
+    with open(os.path.join(BASE, 'tracks.json'), 'w', encoding='utf-8') as f:
+        json.dump({'source_date': data['source_date'], 'count': len(tracks_full),
+                   'tracks': tracks_full}, f, ensure_ascii=False, separators=(',', ':'))
+    print('OK labels=%d albums=%d pages=%d records=%d tracks=%d'
+          % (len(labels), len(best), len(all_pages), records, len(tracks_full)))
 
 if __name__ == '__main__':
     main()
