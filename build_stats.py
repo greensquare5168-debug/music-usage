@@ -23,6 +23,13 @@ UNKNOWN = '（未標廠牌）'
 # 廠牌別名對照（孝瓏指定寫短的）
 ALIAS = {
     'omnimusic': 'Omni',      # 就寫 Omni
+    'arcadia': 'Arcadia Cosmos',   # 孝瓏：Arcadia 要和 Arcadia Cosmos Special Select 分開
+}
+
+# 站上「已建專輯」所屬的圖書館 slug → 廠牌名（這些專輯不在『未建』清單裡，改用曲目使用頁數估算）
+BUILT_LIB = {
+    'arcadia-cosmos': 'Arcadia Cosmos',
+    'arcadia-cosmos-special-select': 'Arcadia Cosmos Special Select',
 }
 
 def brand_of(lib):
@@ -175,6 +182,47 @@ def norm_track(t):
         return parts[1].strip()
     return t
 
+def built_album_rows():
+    """站上已建專輯（不在『未建』清單裡）→ 以「該專輯曲目的使用頁數聯集」估算專輯使用頁數。
+       目前只做 BUILT_LIB 指定的圖書館（Arcadia Cosmos / ... Special Select）。"""
+    cache = os.path.join(ROOT, '網站自動生成', '網站頁面清單_快取.json')
+    if not os.path.exists(cache):
+        return []
+    tp = collections.defaultdict(set)
+    for line in open(IDX, encoding='utf-8'):
+        line = line.strip()
+        if not line:
+            continue
+        d = json.loads(line)
+        t = norm_track(d.get('track', ''))
+        if t:
+            tp[t].add(d.get('url_path') or d.get('page_title'))
+    data = json.load(open(cache, encoding='utf-8'))
+    group = {}            # album href -> 廠牌
+    name = {}
+    for e in data:
+        if e.get('level') != 4:
+            continue
+        p = e['href'].split('/')
+        if len(p) > 5 and p[4] == '圖書館音樂' and p[5] in BUILT_LIB:
+            group[e['href']] = BUILT_LIB[p[5]]
+            name[e['href']] = e['label'].strip()
+    tracks = collections.defaultdict(list)
+    for e in data:
+        if e.get('level') != 5:
+            continue
+        parent = e['href'].rsplit('/', 1)[0]
+        if parent in group:
+            tracks[parent].append(re.split(r'\s+-\s+', e['label'])[0].strip())
+    rows = []
+    for href, brand in group.items():
+        pages = set()
+        for t in tracks[href]:
+            pages |= tp.get(t, set())
+        if pages:
+            rows.append((brand, name[href], len(pages)))
+    return rows
+
 def build_tracks(t2a):
     """全站曲目（曲名 → 出現頁數＋所屬專輯）"""
     tp = collections.defaultdict(set)
@@ -206,7 +254,7 @@ def norm_program(s):
 
 def main():
     tracks, composers = parse_rank(RANK)
-    rows = parse_albums(ALBUM)
+    rows = parse_albums(ALBUM) + built_album_rows()
     t2a = load_track_album_map()
 
     # 廠牌 → 專輯（同名合併）
