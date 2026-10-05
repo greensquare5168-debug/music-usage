@@ -34,6 +34,7 @@ th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line)}
 th{color:var(--muted);font-weight:600;font-size:12px}
 td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
 tbody tr:hover{background:#f7f9ff}
+.miss{color:#b3261e;font-size:12.5px}
 .rank{display:inline-block;min-width:26px;color:var(--muted);font-size:12px}
 .bar-mini{height:7px;border-radius:4px;background:#3b6ef6;display:inline-block;vertical-align:middle}
 footer{margin-top:26px;color:var(--muted);font-size:12px;line-height:1.7}

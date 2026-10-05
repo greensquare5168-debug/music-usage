@@ -18,7 +18,7 @@
   <header>
     <h1>🎼 曲目分布</h1>
     <div class="sub">知識平台網・罐頭音樂研究所　｜　各曲目被使用的頁數（資料日 <span id="srcdate">—</span>）<br>
-      只列<b>曲目名稱</b>；不含作者。</div>
+      只列<b>曲目名稱</b>與所屬<b>專輯</b>；不含作者。</div>
     <div class="err" id="err">載入 stats.json 失敗。請確認與本頁同目錄，並以 http(s) 開啟。</div>
   </header>
 
@@ -31,7 +31,7 @@
     <div class="card wide">
       <h2>曲目清單</h2>
       <p class="hint">共 <span id="pc">—</span> 首曲目</p>
-      <table><thead><tr><th style="width:44px">#</th><th>曲目</th><th class="n">使用頁數</th><th style="width:180px"></th></tr></thead>
+      <table><thead><tr><th style="width:44px">#</th><th>曲目</th><th>專輯</th><th class="n">使用頁數</th><th style="width:150px"></th></tr></thead>
         <tbody id="tb"></tbody></table>
     </div>
   </div>
@@ -56,10 +56,15 @@ fetch('stats.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.statu
               y:{grid:{display:false},ticks:{font:{size:11},color:'#1e2430',autoSkip:false}}}}});
   document.getElementById('pc').textContent=NUM(rows.length);
   const max=rows[0]?rows[0].count:1;
-  document.getElementById('tb').innerHTML=rows.map((p,i)=>`
+  document.getElementById('tb').innerHTML=rows.map((p,i)=>{
+    const alb = (p.albums && p.albums.length)
+      ? p.albums.join('、') : '<span class="miss">（專輯待補）</span>';
+    return `
     <tr><td><span class="rank">${i+1}</span></td><td>${p.name}</td>
+      <td>${alb}</td>
       <td class="n">${NUM(p.count)}</td>
-      <td><span class="bar-mini" style="width:${Math.round(p.count/max*170)}px;background:#eb5757"></span></td></tr>`).join('');
+      <td><span class="bar-mini" style="width:${Math.round(p.count/max*170)}px"></span></td></tr>`;
+  }).join('');
 }).catch(e=>{document.getElementById('err').style.display='block';console.error(e);});
 </script>
 </body>

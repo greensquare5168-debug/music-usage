@@ -16666,123 +16666,212 @@
  "topTracks": [
   {
    "name": "Crazy Party",
-   "count": 67
+   "count": 67,
+   "albums": [
+    "SCD367 - Funny Stuff"
+   ]
   },
   {
    "name": "擁有",
-   "count": 65
+   "count": 65,
+   "albums": []
   },
   {
    "name": "The Whelk",
-   "count": 48
+   "count": 48,
+   "albums": [
+    "BR026-BRF08 - Comic Cuts"
+   ]
   },
   {
    "name": "Toccata Singers",
-   "count": 44
+   "count": 44,
+   "albums": []
   },
   {
    "name": "Baby Moog",
-   "count": 42
+   "count": 42,
+   "albums": []
   },
   {
    "name": "Jay Bee",
-   "count": 40
+   "count": 40,
+   "albums": [
+    "ATMOS168 - Kool Kids"
+   ]
   },
   {
    "name": "Mandolin Boogie",
-   "count": 40
+   "count": 40,
+   "albums": []
   },
   {
    "name": "Mr Digital",
-   "count": 37
+   "count": 37,
+   "albums": [
+    "BR026-BRF08 - Comic Cuts"
+   ]
   },
   {
    "name": "Carnival",
-   "count": 34
+   "count": 34,
+   "albums": [
+    "COS26 - Children/Happy/Love/Fun/Tristesse"
+   ]
   },
   {
    "name": "Amiable Old Vendor",
-   "count": 33
+   "count": 33,
+   "albums": [
+    "PCPM010 - Chinese Folk Custom 1"
+   ]
   },
   {
    "name": "Crazy Moog",
-   "count": 33
+   "count": 33,
+   "albums": []
   },
   {
    "name": "Shipmates",
-   "count": 32
+   "count": 32,
+   "albums": [
+    "MAT122 - Kids"
+   ]
   },
   {
    "name": "Brass Blast",
-   "count": 32
+   "count": 32,
+   "albums": [
+    "CM 35 The Jingle Bank 5"
+   ]
   },
   {
    "name": "The Look In Your Eyes",
-   "count": 32
+   "count": 32,
+   "albums": []
   },
   {
    "name": "Under the Stars",
-   "count": 32
+   "count": 32,
+   "albums": []
   },
   {
    "name": "Coconut Island",
-   "count": 31
+   "count": 31,
+   "albums": [
+    "FC-S17 - Child's Play"
+   ]
   },
   {
    "name": "Children Clownery",
-   "count": 31
+   "count": 31,
+   "albums": [
+    "M003 - Clown Tales"
+   ]
   },
   {
    "name": "Cat & Mouse",
-   "count": 29
+   "count": 29,
+   "albums": [
+    "ATMOS140 - World of Animation 2",
+    "MMP031 - Comedy & Fun",
+    "SI-K01 - Clowning Around"
+   ]
   },
   {
    "name": "Yeah Baby",
-   "count": 29
+   "count": 29,
+   "albums": [
+    "ATMOS168 - Kool Kids"
+   ]
   },
   {
    "name": "Bedrock",
-   "count": 27
+   "count": 27,
+   "albums": [
+    "NSPSHUM02 - Comedy - Humor 2"
+   ]
   },
   {
    "name": "Another Fine Mess",
-   "count": 27
+   "count": 27,
+   "albums": [
+    "BV073 - Comedy Situations"
+   ]
   },
   {
    "name": "Techno-Kids",
-   "count": 27
+   "count": 27,
+   "albums": [
+    "COSMOS375-268 - Comic"
+   ]
   },
   {
    "name": "Nostalgia",
-   "count": 26
+   "count": 26,
+   "albums": [
+    "COS26 - Children/Happy/Love/Fun/Tristesse",
+    "NSPSHUM02 - Comedy - Humor 2"
+   ]
   },
   {
    "name": "Happy Moog",
-   "count": 26
+   "count": 26,
+   "albums": []
   },
   {
    "name": "Wonderful Time",
-   "count": 26
+   "count": 26,
+   "albums": []
   },
   {
    "name": "Rise and Shine",
-   "count": 26
+   "count": 26,
+   "albums": [
+    "BEE 12 Daytime",
+    "BEE 12，2011 Daytime",
+    "BRB 11 Jingles Volume Eleven",
+    "BRB 11，1981 Jingles Volume Eleven",
+    "CAR 127 Leisure",
+    "DWCD 0016 Topsy Turvy",
+    "KPM 1138",
+    "MHE 60 Essential Rhythm",
+    "PML-CD 1052 Human Stories 2",
+    "PML-CD 1052，1989 Human Stories 2",
+    "PML-CD 1093，1991 Jingles 5"
+   ]
   },
   {
    "name": "Firecracker",
-   "count": 25
+   "count": 25,
+   "albums": [
+    "BRH 34 Firecracker / Street Sounds",
+    "BRH 34，1988 Firecracker / Street Sounds",
+    "BRI 19 Electrofx Volume II",
+    "BRI 19，1982 Electrofx Volume II",
+    "MHE 46 Adventure Sport",
+    "PML 73 Flying High",
+    "PML 73，1983 Flying High",
+    "SEL 5305 Massive Metal"
+   ]
   },
   {
    "name": "Something Wrong",
-   "count": 25
+   "count": 25,
+   "albums": []
   },
   {
    "name": "Organ Grinder",
-   "count": 24
+   "count": 24,
+   "albums": [
+    "BMP 111 N/A",
+    "UBM 1128"
+   ]
   },
   {
    "name": "Mystery Tunnel",
-   "count": 24
+   "count": 24,
+   "albums": []
   }
  ],
  "platforms": [

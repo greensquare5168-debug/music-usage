@@ -10,7 +10,7 @@
   - ../全站專輯_未建_依使用排序_含平台_20261003.txt  專輯 × 使用頁數 × 廠牌
 輸出：stats.json（與 index.html 同目錄）
 """
-import json, re, collections, os, datetime
+import json, re, collections, os, datetime, glob
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(BASE)
@@ -103,6 +103,67 @@ def parse_albums(path):
             rows.append((b, name, cnt))
     return rows
 
+def load_track_album_map():
+    """曲目 → 可能所屬專輯。來源（優先用『已建專輯頁』）：
+       ① 網站自動生成/網站頁面清單_快取.json（站上已建的 圖書館音樂 專輯 → 曲目頁）
+       ② 批次輸出/站上使用對照.md（ALL 館對照 PM Wiki）
+       ③ 批次輸出/{Bruton,Parry}/*曲目-作者*.txt（逐專輯清單）"""
+    m = collections.defaultdict(set)          # ②③（ALL 館對照／Bruton・Parry 逐專輯）
+    primary = collections.defaultdict(set)    # ① 站上已建專輯頁（優先）
+
+    def add(track, album, pri=False):
+        track = (track or '').strip().lower()
+        album = norm_album((album or '').strip())
+        if track and album:
+            (primary if pri else m)[track].add(album)
+
+    # ① 站上已建專輯頁
+    cache = os.path.join(ROOT, '網站自動生成', '網站頁面清單_快取.json')
+    if os.path.exists(cache):
+        data = json.load(open(cache, encoding='utf-8'))
+        alb = {e['href']: e['label'] for e in data if e.get('level') == 4}
+        for e in data:
+            if e.get('level') != 5:
+                continue
+            parent = e['href'].rsplit('/', 1)[0]
+            name = re.split(r'\s+-\s+', e.get('label', ''))[0]
+            add(name, alb.get(parent, parent.rsplit('/', 1)[-1]), pri=True)
+
+    # ② ALL 館對照
+    md = os.path.join(ROOT, '批次輸出', 'ALL', '站上使用對照.md')
+    if os.path.exists(md):
+        cur = None
+        for line in open(md, encoding='utf-8'):
+            if line.startswith('## '):
+                cur = re.sub(r'[（(]\s*\d*\s*[)）]\s*$', '', line[3:].strip()).strip()
+            elif line.startswith('- ') and not line.startswith('    -'):
+                b = re.match(r'^(.*?)（\d+ 次）$', line[2:].strip())
+                if not b:
+                    continue
+                parts = [x.strip() for x in re.split(r'\s+-\s+', b.group(1))]
+                tk = parts[1] if len(parts) >= 2 and parts[0].isdigit() else parts[0]
+                add(tk, cur)
+
+    # ③ Bruton / Parry 逐專輯
+    for lib in ('Bruton', 'Parry'):
+        for f in sorted(glob.glob(os.path.join(ROOT, '批次輸出', lib, '*曲目-作者*.txt'))):
+            try:
+                first = open(f, encoding='utf-8').readline().strip()
+            except Exception:
+                continue
+            am = re.match(r'^《(.*?)》（(.*?)）', first)
+            album = '%s %s' % (am.group(2), am.group(1)) if am else \
+                os.path.basename(f).split('_曲目')[0]
+            for line in open(f, encoding='utf-8'):
+                line = line.strip()
+                if not line or line.startswith(('《', '來源')) or ' - ' not in line:
+                    continue
+                add(re.split(r'\s+-\s+', line)[0], album)
+    out = {}
+    for k in set(primary) | set(m):
+        out[k] = sorted(primary[k] or m[k])
+    return out
+
 def norm_program(s):
     """節目名正規化：去掉集數後綴（例：古古食-ep-01什麼… → 古古食）"""
     s = (s or '').strip()
@@ -113,6 +174,7 @@ def norm_program(s):
 def main():
     tracks, composers = parse_rank(RANK)
     rows = parse_albums(ALBUM)
+    t2a = load_track_album_map()
 
     # 廠牌 → 專輯（同名合併）
     lab = collections.defaultdict(lambda: {'total': 0, 'alb': collections.OrderedDict()})
@@ -174,7 +236,9 @@ def main():
                     'albums': len(best), 'tracks': len(tracks)},
         'labels': labels,
         'topAlbums': top_albums,
-        'topTracks': [{'name': t['name'], 'count': t['count']} for t in tracks[:30]],
+        'topTracks': [{'name': t['name'], 'count': t['count'],
+                       'albums': sorted(t2a.get(t['name'].lower(), []))}
+                      for t in tracks[:30]],
         'platforms': [{'name': k, 'count': v} for k, v in usage_plat],
         'programs': [{'name': k, 'count': v} for k, v in programs],
     }
