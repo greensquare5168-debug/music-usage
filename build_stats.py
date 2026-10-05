@@ -82,13 +82,21 @@ def parse_rank(path):
                 composers.append({'name': m.group(2).strip(), 'count': int(m.group(1))})
     return tracks, composers
 
+def norm_album(s):
+    """專輯名：去掉結尾的年份（例：BRO 21 … Comic Cuts（2001） → … Comic Cuts）"""
+    s = (s or '').strip()
+    n = re.sub(r'\s*[（(]\s*(?:1[89]\d{2}|20\d{2})?\s*[)）]\s*$', '', s).strip()
+    if n != s:
+        n = re.sub(r'[\s．.。，,]+$', '', n).strip()
+    return n or s
+
 def parse_albums(path):
     """回傳 [(廠牌, 專輯名, 使用頁數)]"""
     rows = []
     for line in open(path, encoding='utf-8'):
         m = re.match(r'^\s*\d+\.\s*(\d+)頁\s+(.+?)\s*｜\s*圖書館：(.*?)\s*｜\s*平台：', line)
         if not m: continue
-        cnt = int(m.group(1)); name = m.group(2).strip()
+        cnt = int(m.group(1)); name = norm_album(m.group(2).strip())
         for b in brand_of(m.group(3)):
             rows.append((b, name, cnt))
     return rows
@@ -104,19 +112,16 @@ def main():
     tracks, composers = parse_rank(RANK)
     rows = parse_albums(ALBUM)
 
-    # 廠牌 → 專輯
-    lab = collections.defaultdict(lambda: {'total': 0, 'albums': []})
-    seen = set()
+    # 廠牌 → 專輯（同名合併）
+    lab = collections.defaultdict(lambda: {'total': 0, 'alb': collections.OrderedDict()})
     for b, name, cnt in rows:
-        if (b, name) in seen: continue
-        seen.add((b, name))
         lab[b]['total'] += cnt
-        lab[b]['albums'].append({'name': name, 'count': cnt})
+        lab[b]['alb'][name] = lab[b]['alb'].get(name, 0) + cnt
     labels = []
     for name, d in lab.items():
-        d['albums'].sort(key=lambda a: -a['count'])
-        labels.append({'name': name, 'total': d['total'],
-                       'n': len(d['albums']), 'albums': d['albums']})
+        albums = [{'name': k, 'count': v} for k, v in d['alb'].items()]
+        albums.sort(key=lambda a: -a['count'])
+        labels.append({'name': name, 'total': d['total'], 'n': len(albums), 'albums': albums})
     labels.sort(key=lambda x: -x['total'])
 
     # 全站 TOP 專輯（不分廠牌，去重同名取最大）
