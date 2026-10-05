@@ -83,9 +83,11 @@ def parse_rank(path):
     return tracks, composers
 
 def norm_album(s):
-    """專輯名：去掉結尾的年份（例：BRO 21 … Comic Cuts（2001） → … Comic Cuts）"""
+    """專輯名：去掉結尾的年份／編號括號
+       例：BRO 21 … Comic Cuts（2001） → … Comic Cuts；SCD 006 1987（2392） → SCD 006"""
     s = (s or '').strip()
-    n = re.sub(r'\s*[（(]\s*(?:1[89]\d{2}|20\d{2})?\s*[)）]\s*$', '', s).strip()
+    n = re.sub(r'\s*[（(]\s*\d*\s*[)）]\s*$', '', s).strip()   # 去結尾的 （年份）／（編號）／（）
+    n = re.sub(r'\s+(?:1[89]\d{2}|20\d{2})\s*$', '', n).strip()  # 去結尾殘留的裸年份
     if n != s:
         n = re.sub(r'[\s．.。，,]+$', '', n).strip()
     return n or s
