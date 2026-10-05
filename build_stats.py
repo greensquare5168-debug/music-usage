@@ -6,7 +6,7 @@
 
 資料來源：
   - ../網站音樂索引/all_20260925_full.jsonl   全站索引（頁面 × 曲目 × 平台 × 節目）
-  - ../站上使用最多_排行_20261003.txt          TOP 曲目 / TOP 作曲者
+  - ../站上使用最多_排行_20261003.txt          TOP 曲目（只取曲名，不取作者）
   - ../全站專輯_未建_依使用排序_含平台_20261003.txt  專輯 × 使用頁數 × 廠牌
 輸出：stats.json（與 index.html 同目錄）
 """
@@ -147,8 +147,7 @@ def main():
                     'albums': len(best), 'tracks': len(tracks)},
         'labels': labels,
         'topAlbums': top_albums,
-        'topTracks': tracks[:30],
-        'topComposers': composers[:20],
+        'topTracks': [{'name': t['name'], 'count': t['count']} for t in tracks[:30]],
         'platforms': [{'name': k, 'count': v} for k, v in usage_plat],
         'programs': [{'name': k, 'count': v} for k, v in programs],
     }

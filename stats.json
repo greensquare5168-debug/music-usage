@@ -16716,235 +16716,123 @@
  "topTracks": [
   {
    "name": "Crazy Party",
-   "composer": "Armin Sabol",
    "count": 67
   },
   {
    "name": "擁有",
-   "composer": "",
    "count": 65
   },
   {
    "name": "The Whelk",
-   "composer": "Jonathan Hodge",
    "count": 48
   },
   {
    "name": "Toccata Singers",
-   "composer": "Marc Durst",
    "count": 44
   },
   {
    "name": "Baby Moog",
-   "composer": "Laurent Lombard",
    "count": 42
   },
   {
    "name": "Jay Bee",
-   "composer": "Richard Kenton",
    "count": 40
   },
   {
    "name": "Mandolin Boogie",
-   "composer": "Laurent Lombard",
    "count": 40
   },
   {
    "name": "Mr Digital",
-   "composer": "Jonathan Hodge",
    "count": 37
   },
   {
    "name": "Carnival",
-   "composer": "Christian Girardot/Steve Martin",
    "count": 34
   },
   {
    "name": "Amiable Old Vendor",
-   "composer": "Zhi Hua Zhou",
    "count": 33
   },
   {
    "name": "Crazy Moog",
-   "composer": "Laurent Lombard",
    "count": 33
   },
   {
    "name": "Shipmates",
-   "composer": "Stephen Paul Martin",
    "count": 32
   },
   {
    "name": "Brass Blast",
-   "composer": "Dominic Francis Glynn & Martin Smith",
    "count": 32
   },
   {
    "name": "The Look In Your Eyes",
-   "composer": "Milo Deering & Ruben Ayala",
    "count": 32
   },
   {
    "name": "Under the Stars",
-   "composer": "Daniel May & Marc Ferrari",
    "count": 32
   },
   {
    "name": "Coconut Island",
-   "composer": "Richard Joel Rothstein",
    "count": 31
   },
   {
    "name": "Children Clownery",
-   "composer": "Giovanni Lodigiani",
    "count": 31
   },
   {
    "name": "Cat & Mouse",
-   "composer": "Andrew Blythe & Marten Andrew Joustra/Hendrik Hennie Bekker/Hiroshi Takami/Thomas Foyer",
    "count": 29
   },
   {
    "name": "Yeah Baby",
-   "composer": "Andrew Timothy Blythe & Marten Andrew Joustra",
    "count": 29
   },
   {
    "name": "Bedrock",
-   "composer": "Kem Kraft",
    "count": 27
   },
   {
    "name": "Another Fine Mess",
-   "composer": "Grant Geissman/Pete Kelly",
    "count": 27
   },
   {
    "name": "Techno-Kids",
-   "composer": "Klaus Back & Tini Beier",
    "count": 27
   },
   {
    "name": "Nostalgia",
-   "composer": "Judson Maher",
    "count": 26
   },
   {
    "name": "Happy Moog",
-   "composer": "Laurent Lombard",
    "count": 26
   },
   {
    "name": "Wonderful Time",
-   "composer": "Marc Dall'Anese",
    "count": 26
   },
   {
    "name": "Rise and Shine",
-   "composer": "Vince Webb",
    "count": 26
   },
   {
    "name": "Firecracker",
-   "composer": "Jiang Li/Jiang Li",
    "count": 25
   },
   {
    "name": "Something Wrong",
-   "composer": "Bohus Kantor",
    "count": 25
   },
   {
    "name": "Organ Grinder",
-   "composer": "Ilene Novog",
    "count": 24
   },
   {
    "name": "Mystery Tunnel",
-   "composer": "Lars Kurz/Lars Kurz",
    "count": 24
-  }
- ],
- "topComposers": [
-  {
-   "name": "Jonathan Hodge",
-   "count": 273
-  },
-  {
-   "name": "Laurent Lombard",
-   "count": 227
-  },
-  {
-   "name": "Stephen Paul Martin",
-   "count": 190
-  },
-  {
-   "name": "Andrew Blythe & Marten Andrew Joustra",
-   "count": 176
-  },
-  {
-   "name": "John Charles Fiddy & Sammy Burdson",
-   "count": 138
-  },
-  {
-   "name": "Thomas Foyer",
-   "count": 131
-  },
-  {
-   "name": "Zhi Hua Zhou",
-   "count": 116
-  },
-  {
-   "name": "David Graham Farnon",
-   "count": 104
-  },
-  {
-   "name": "Marc Dall'Anese",
-   "count": 100
-  },
-  {
-   "name": "Andrew Timothy Blythe & Marten Andrew Joustra",
-   "count": 96
-  },
-  {
-   "name": "Xavier Edmunds & Zoltan Biscotti",
-   "count": 90
-  },
-  {
-   "name": "Richard Cassman & Vyvyan James Hope-Scott",
-   "count": 88
-  },
-  {
-   "name": "Hendrik Hennie Bekker",
-   "count": 86
-  },
-  {
-   "name": "Giovanni Lodigiani",
-   "count": 86
-  },
-  {
-   "name": "Happy Step",
-   "count": 82
-  },
-  {
-   "name": "James Rast",
-   "count": 78
-  },
-  {
-   "name": "Steve Martin",
-   "count": 72
-  },
-  {
-   "name": "Serpens",
-   "count": 72
-  },
-  {
-   "name": "John Denis Hawksworth",
-   "count": 70
-  },
-  {
-   "name": "Armin Sabol",
-   "count": 68
   }
  ],
  "platforms": [

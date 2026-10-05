@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>音樂使用狀況｜節目分布</title>
+<title>音樂使用狀況｜曲目分布</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -11,27 +11,27 @@
 <div class="wrap">
   <nav class="nav">
     <a class="" href="index.html">廠牌 → 專輯</a>
-    <a class="" href="tracks.html">曲目分布</a>
-    <a class="on" href="programs.html">節目分布</a>
+    <a class="on" href="tracks.html">曲目分布</a>
+    <a class="" href="programs.html">節目分布</a>
     <a class="" href="platforms.html">平台分布</a>
   </nav>
   <header>
-    <h1>📺 節目分布</h1>
-    <div class="sub">知識平台網・罐頭音樂研究所　｜　各節目使用到音樂的頁數（資料日 <span id="srcdate">—</span>）<br>
-      只列<b>節目名稱</b>；不含音樂廠牌／圖書館分類。</div>
+    <h1>🎼 曲目分布</h1>
+    <div class="sub">知識平台網・罐頭音樂研究所　｜　各曲目被使用的頁數（資料日 <span id="srcdate">—</span>）<br>
+      只列<b>曲目名稱</b>；不含作者。</div>
     <div class="err" id="err">載入 stats.json 失敗。請確認與本頁同目錄，並以 http(s) 開啟。</div>
   </header>
 
   <div class="grid">
     <div class="card wide">
-      <h2>節目使用排行</h2>
+      <h2>曲目使用排行</h2>
       <p class="hint">依「站上使用頁數」排序</p>
       <div class="cbox" id="box"></div>
     </div>
     <div class="card wide">
-      <h2>節目清單</h2>
-      <p class="hint">共 <span id="pc">—</span> 個節目</p>
-      <table><thead><tr><th style="width:44px">#</th><th>節目</th><th class="n">使用頁數</th><th style="width:180px"></th></tr></thead>
+      <h2>曲目清單</h2>
+      <p class="hint">共 <span id="pc">—</span> 首曲目</p>
+      <table><thead><tr><th style="width:44px">#</th><th>曲目</th><th class="n">使用頁數</th><th style="width:180px"></th></tr></thead>
         <tbody id="tb"></tbody></table>
     </div>
   </div>
@@ -43,13 +43,13 @@ fetch('stats.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.statu
 .then(d=>{
   document.getElementById('srcdate').textContent=d.source_date;
   document.getElementById('gen').textContent=d.generated;
-  const rows=d.programs;
+  const rows=d.topTracks;
   const box=document.getElementById('box');
   box.style.height=Math.max(300,rows.length*26)+'px';
   const ctx=document.createElement('canvas'); box.appendChild(ctx);
   new Chart(ctx,{type:'bar',
     data:{labels:rows.map(p=>p.name),datasets:[{data:rows.map(p=>p.count),
-      backgroundColor:'#eb5757',borderRadius:5,borderSkipped:false,maxBarThickness:20}]},
+      backgroundColor:'#3b6ef6',borderRadius:5,borderSkipped:false,maxBarThickness:20}]},
     options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,animation:{duration:600},
       plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>' '+NUM(c.raw)+' 頁'}}},
       scales:{x:{beginAtZero:true,grid:{color:'#eef1f7'},ticks:{font:{size:11},color:'#6b7688',precision:0}},
