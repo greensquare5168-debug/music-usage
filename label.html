@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>音樂使用狀況｜廠牌</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,17 +18,12 @@
 
   <div class="grid">
     <div class="card wide">
-      <h2>該廠牌專輯使用排行</h2>
-      <p class="hint">排序：
+      <h2>專輯清單</h2>
+      <p class="hint">共 <span id="acount">—</span> 張　·　排序：
         <span class="seg" id="sortbar">
           <button data-sort="count" class="on">使用頁數</button>
           <button data-sort="az">A–Z</button>
         </span></p>
-      <div class="cbox" id="box-albums"></div>
-    </div>
-    <div class="card wide">
-      <h2>專輯清單</h2>
-      <p class="hint">共 <span id="acount">—</span> 張</p>
       <table><thead><tr><th style="width:44px">#</th><th>專輯</th><th class="n">使用頁數</th><th style="width:180px"></th></tr></thead>
         <tbody id="alist"></tbody></table>
     </div>
@@ -60,20 +54,6 @@ fetch('stats.json',{cache:'no-store'}).then(r=>{ if(!r.ok) throw new Error(r.sta
   ].map(([l,n])=>`<div class="chip"><div class="n">${NUM(n)}</div><div class="l">${l}</div></div>`).join('');
 
   const alb = lab.albums;
-  const box = document.getElementById('box-albums');
-  const h = Math.max(300, alb.length * 24);
-  box.style.height = h + 'px';
-  const ctx = document.createElement('canvas'); box.appendChild(ctx);
-  const chart = new Chart(ctx, {
-    type:'bar',
-    data:{ labels: alb.map(a=>a.name), datasets:[{ data: alb.map(a=>a.count),
-           backgroundColor:'#12b5a5', borderRadius:5, borderSkipped:false, maxBarThickness:20 }] },
-    options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false, animation:{duration:600},
-      plugins:{ legend:{display:false}, tooltip:{callbacks:{label:c=>' '+NUM(c.raw)+' 頁'}} },
-      scales:{ x:{beginAtZero:true, grid:{color:'#eef1f7'}, ticks:{font:{size:11}, color:'#6b7688', precision:0}},
-               y:{grid:{display:false}, ticks:{font:{size:11}, color:'#1e2430', autoSkip:false}} } }
-  });
-
   document.getElementById('acount').textContent = NUM(alb.length);
   let sortMode = 'count';
   function renderAlb(){
@@ -81,9 +61,6 @@ fetch('stats.json',{cache:'no-store'}).then(r=>{ if(!r.ok) throw new Error(r.sta
     if (sortMode === 'az') list.sort((a,b)=>a.name.localeCompare(b.name, 'en', {numeric:true}));
     else                    list.sort((a,b)=>b.count - a.count || a.name.localeCompare(b.name));
     const max = list.length ? Math.max(...list.map(a=>a.count)) : 1;
-    chart.data.labels = list.map(a=>a.name);
-    chart.data.datasets[0].data = list.map(a=>a.count);
-    chart.update();
     document.getElementById('alist').innerHTML = list.map((a,i)=>`
       <tr><td><span class="rank">${i+1}</span></td><td>${a.name}</td>
         <td class="n">${NUM(a.count)}</td>
