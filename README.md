@@ -4,25 +4,23 @@
 
 - 🌐 線上：https://greensquare5168-debug.github.io/music-usage/
   - `index.html`：全部廠牌（點列 → 進入該廠牌）
-  - `label.html?b=廠牌名`：該廠牌的專輯清單（編號／名稱／使用頁數，可用 A–Z 或使用頁數排序）
+  - `label.html?b=廠牌名`：該廠牌的專輯清單（編號／名稱／使用頁數；可用 A–Z 或使用頁數排序）
 
-## 使用頁數怎麼算（2026-10-05 起）
+## 規則（2026-10-05 定案）
 
-**直接照站台現況**：站上節目頁（yoyotv／巧連智／momo親子台／公視／古古食）中，
-有列出該專輯任一曲目的頁數（不含館藏／專輯頁自己）。
-
-> ⚠️ **2026-10-05 修正**：比對改為「**曲名 ＋ 作曲者**」都要相符（作曲者以**姓氏**為主，
-> 並套用 `../作者全名對照表.md` 的**筆名／別名表**；任一邊作曲者空白＝不排除）。
-> 原因：舊版只比曲名，遇「**同名不同曲**」會誤計（例：CAR 385 的 *English Country Garden*
-> 被誤記到站上 Richard John Baker 那首）。修正後 CAR 385 → 0，
-> CAR 176 由 69→44（與 2026-10-04 人工核對的 44 頁一致）。
+1. **只列站上「已有專輯頁」的專輯**（未建頁的不列）
+2. **使用頁數**＝站上節目頁（yoyotv／巧連智／momo親子台／公視／古古食）中，
+   有列出該專輯任一曲目的頁數；完全沒用到 → 0
+3. **廠牌**＝站上《圖書館音樂》的分館；CPM 館內編號 `CAS…` → 「CPM Archive Series」、
+   `CLASS…` → 「CPM Classical Series」（各自一系列）
 
 ## 更新資料
 
 ```bash
-# 1) 重爬站台（需要站台頁面清單）
-python3 ../網站音樂索引/scrape_site.py  <urls.txt>  ../網站音樂索引/all_YYYYMMDD_full.jsonl
-# 2) 產出統計
+# 1) 重爬站台（頁面清單由站台導覽取得）
+python3 ../網站音樂索引/scrape_site.py <urls.txt> ../網站音樂索引/all_YYYYMMDD_full.jsonl
+# 2) 導覽快照 → site_nav_YYYYMMDD.json（見 ../網站自動生成/）
+# 3) 產出統計
 python3 build_stats.py      # → stats.json
 git add -A && git commit -m "update stats" && git push
 ```
@@ -31,13 +29,7 @@ git add -A && git commit -m "update stats" && git push
 
 | 檔案 | 用途 |
 |---|---|
-| `網站音樂索引/all_20261005_full.jsonl` | 站台全站索引（節目頁曲目、館藏頁）＝使用頁數來源 |
-| `網站自動生成/site_nav_20261005.json` | 站台導覽（library／專輯／曲目頁 名稱） |
-| `批次輸出/ALL/站上使用對照.md` | 專輯 → 曲目（PM Wiki 對照；純數字行視為解析錯已丟） |
-| `全站專輯_未建_依使用排序_含平台_20261003.txt` | 廠牌／專輯清單 |
+| `網站音樂索引/all_20261005_full.jsonl` | 站台全站索引（節目頁曲目）＝使用頁數來源 |
+| `網站自動生成/site_nav_20261005.json` | 站台導覽（圖書館／專輯／曲目頁 名稱與階層） |
 
 > 原始資料位於 `~/clawd/projects/罐頭音樂/`。
-> 廠牌名稱正規化：去格式後綴（CD／vinyl／digital／年份）、去結尾 Music、
-> 去 Production/Recorded Music Library・Music Sound Stage・Music Library・AMPS 尾巴、
-> 古典分類；CPM Main→CPM、CPM Archive Series（CAS）、CPM Classical Series（CLASS）各自一系列、KPM 併為單一；
-> 別名表 `ALIAS`（Omnimusic→Omni、Koka Media→Koka、Arcadia→Arcadia Cosmos）。
