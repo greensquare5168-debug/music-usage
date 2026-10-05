@@ -9,7 +9,7 @@
   （曲目清單取自 `批次輸出/ALL/站上使用對照.md`；純數字＝解析錯誤已濾除）
 輸出：stats.json
 """
-import json, re, collections, os, glob, datetime
+import json, re, collections, os, glob, datetime, unicodedata
 
 BASE  = os.path.dirname(os.path.abspath(__file__))
 ROOT  = os.path.dirname(BASE)
@@ -159,16 +159,21 @@ ALIAS = load_alias()
 _MULTI = re.compile(r'\s*(?:&|/|,|\+| and |feat\.?|ft\.?)\s*', re.I)
 
 def surnames(name):
-    """作曲者姓氏集合（先套別名表）"""
+    """作曲者姓氏集合（先套別名表；重音符號先正規化）"""
     if not name:
         return set()
     name = ALIAS.get(name.strip().lower(), name)
     out = set()
     for part in _MULTI.split(name.lower()):
-        toks = [x for x in re.split(r"[^A-Za-z'\u00C0-\u024F\-]+", part) if x]
+        part = ''.join(c for c in unicodedata.normalize('NFD', part)
+                       if unicodedata.category(c) != 'Mn')
+        toks = [x for x in re.split(r"[^A-Za-z'\-]+", part) if x]
         if toks:
             out.add(re.sub(r'[^a-z]', '', toks[-1]))
     return out
+
+def _deacc(s):
+    return ''.join(c for c in unicodedata.normalize('NFD', s or '') if unicodedata.category(c) != 'Mn')
 
 def composer_match(md_c, site_c):
     """作曲者比對：True 相符／False 不符／None 資訊不足（不排除）"""
@@ -179,7 +184,8 @@ def composer_match(md_c, site_c):
         return None
     if a & b:
         return True
-    na = re.sub(r'[^a-z]', '', md_c.lower()); nb = re.sub(r'[^a-z]', '', site_c.lower())
+    na = re.sub(r'[^a-z]', '', _deacc(md_c.lower()))
+    nb = re.sub(r'[^a-z]', '', _deacc(site_c.lower()))
     if na and nb and (na in nb or nb in na):
         return True
     return False

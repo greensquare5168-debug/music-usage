@@ -1427,20 +1427,20 @@
   },
   {
    "name": "Bruton",
-   "total": 93,
+   "total": 95,
    "n": 282,
    "albums": [
+    {
+     "name": "BRO 21 Classic Film and TV Four: Comic Cuts",
+     "code": "BRO 21",
+     "title": "Classic Film and TV Four: Comic Cuts",
+     "count": 23
+    },
     {
      "name": "BRB 28 Promo Power",
      "code": "BRB 28",
      "title": "Promo Power",
      "count": 23
-    },
-    {
-     "name": "BRO 21 Classic Film and TV Four: Comic Cuts",
-     "code": "BRO 21",
-     "title": "Classic Film and TV Four: Comic Cuts",
-     "count": 21
     },
     {
      "name": "BRJ 21 The Entertainers Volume 2",
@@ -3126,7 +3126,7 @@
   },
   {
    "name": "Intervox",
-   "total": 45,
+   "total": 46,
    "n": 17,
    "albums": [
     {
@@ -3139,7 +3139,7 @@
      "name": "IVOX 020 Kid's Party",
      "code": "IVOX 020",
      "title": "Kid's Party",
-     "count": 0
+     "count": 1
     },
     {
      "name": "IVOX 024 Dramatic Heartbreak",
@@ -8318,6 +8318,121 @@
    ]
   },
   {
+   "name": "Hibou",
+   "total": 3,
+   "n": 18,
+   "albums": [
+    {
+     "name": "HIB 87 Comic - Comedy - Games - Jingles",
+     "code": "HIB 87",
+     "title": "Comic - Comedy - Games - Jingles",
+     "count": 2
+    },
+    {
+     "name": "HIB 37 Leisure",
+     "code": "HIB 37",
+     "title": "Leisure",
+     "count": 1
+    },
+    {
+     "name": "HIB 27 Children",
+     "code": "HIB 27",
+     "title": "Children",
+     "count": 0
+    },
+    {
+     "name": "HIB 347 Children (Vol. 3)",
+     "code": "HIB 347",
+     "title": "Children (Vol. 3)",
+     "count": 0
+    },
+    {
+     "name": "HIB 213 Generiques: TV, Radio, Films, Publicite (Vol. 6)",
+     "code": "HIB 213",
+     "title": "Generiques: TV, Radio, Films, Publicite (Vol. 6)",
+     "count": 0
+    },
+    {
+     "name": "HIB 97 Mystery",
+     "code": "HIB 97",
+     "title": "Mystery",
+     "count": 0
+    },
+    {
+     "name": "HIB 207 Generiques: TV, Radio, Films, Publicite (Vol. 3)",
+     "code": "HIB 207",
+     "title": "Generiques: TV, Radio, Films, Publicite (Vol. 3)",
+     "count": 0
+    },
+    {
+     "name": "HIB 307 Children (Vol. 2)",
+     "code": "HIB 307",
+     "title": "Children (Vol. 2)",
+     "count": 0
+    },
+    {
+     "name": "HIB 477 97 Jingles and Long Versions (Vol. 1): Fashion / Sports / Leisure",
+     "code": "HIB 477 97",
+     "title": "Jingles and Long Versions (Vol. 1): Fashion / Sports / Leisure",
+     "count": 0
+    },
+    {
+     "name": "HIB 201 Generiques: TV, Radio, Films, Publicite (Vol. 1)",
+     "code": "HIB 201",
+     "title": "Generiques: TV, Radio, Films, Publicite (Vol. 1)",
+     "count": 0
+    },
+    {
+     "name": "HIB 417 Mystery - Thriller - Tension (Vol. 2)",
+     "code": "HIB 417",
+     "title": "Mystery - Thriller - Tension (Vol. 2)",
+     "count": 0
+    },
+    {
+     "name": "HIB 457 Human Suspense",
+     "code": "HIB 457",
+     "title": "Human Suspense",
+     "count": 0
+    },
+    {
+     "name": "HIB 177 Positive 1",
+     "code": "HIB 177",
+     "title": "Positive 1",
+     "count": 0
+    },
+    {
+     "name": "HIB 217 Positive 3",
+     "code": "HIB 217",
+     "title": "Positive 3",
+     "count": 0
+    },
+    {
+     "name": "HIB 407 Tonic New Beat",
+     "code": "HIB 407",
+     "title": "Tonic New Beat",
+     "count": 0
+    },
+    {
+     "name": "HIB 437 Rare Themes",
+     "code": "HIB 437",
+     "title": "Rare Themes",
+     "count": 0
+    },
+    {
+     "name": "HIB 467 Selected Themes",
+     "code": "HIB 467",
+     "title": "Selected Themes",
+     "count": 0
+    },
+    {
+     "name": "HIB 497 Fashion Concept",
+     "code": "HIB 497",
+     "title": "Fashion Concept",
+     "count": 0
+    }
+   ]
+  },
+  {
    "name": "The Retro Lounge",
    "total": 3,
    "n": 17,
@@ -8422,121 +8537,6 @@
      "name": "XEL 019 Doo Wop Deluxe",
      "code": "XEL 019",
      "title": "Doo Wop Deluxe",
-     "count": 0
-    }
-   ]
-  },
-  {
-   "name": "Hibou",
-   "total": 2,
-   "n": 18,
-   "albums": [
-    {
-     "name": "HIB 87 Comic - Comedy - Games - Jingles",
-     "code": "HIB 87",
-     "title": "Comic - Comedy - Games - Jingles",
-     "count": 1
-    },
-    {
-     "name": "HIB 37 Leisure",
-     "code": "HIB 37",
-     "title": "Leisure",
-     "count": 1
-    },
-    {
-     "name": "HIB 27 Children",
-     "code": "HIB 27",
-     "title": "Children",
-     "count": 0
-    },
-    {
-     "name": "HIB 347 Children (Vol. 3)",
-     "code": "HIB 347",
-     "title": "Children (Vol. 3)",
-     "count": 0
-    },
-    {
-     "name": "HIB 213 Generiques: TV, Radio, Films, Publicite (Vol. 6)",
-     "code": "HIB 213",
-     "title": "Generiques: TV, Radio, Films, Publicite (Vol. 6)",
-     "count": 0
-    },
-    {
-     "name": "HIB 97 Mystery",
-     "code": "HIB 97",
-     "title": "Mystery",
-     "count": 0
-    },
-    {
-     "name": "HIB 207 Generiques: TV, Radio, Films, Publicite (Vol. 3)",
-     "code": "HIB 207",
-     "title": "Generiques: TV, Radio, Films, Publicite (Vol. 3)",
-     "count": 0
-    },
-    {
-     "name": "HIB 307 Children (Vol. 2)",
-     "code": "HIB 307",
-     "title": "Children (Vol. 2)",
-     "count": 0
-    },
-    {
-     "name": "HIB 477 97 Jingles and Long Versions (Vol. 1): Fashion / Sports / Leisure",
-     "code": "HIB 477 97",
-     "title": "Jingles and Long Versions (Vol. 1): Fashion / Sports / Leisure",
-     "count": 0
-    },
-    {
-     "name": "HIB 201 Generiques: TV, Radio, Films, Publicite (Vol. 1)",
-     "code": "HIB 201",
-     "title": "Generiques: TV, Radio, Films, Publicite (Vol. 1)",
-     "count": 0
-    },
-    {
-     "name": "HIB 417 Mystery - Thriller - Tension (Vol. 2)",
-     "code": "HIB 417",
-     "title": "Mystery - Thriller - Tension (Vol. 2)",
-     "count": 0
-    },
-    {
-     "name": "HIB 457 Human Suspense",
-     "code": "HIB 457",
-     "title": "Human Suspense",
-     "count": 0
-    },
-    {
-     "name": "HIB 177 Positive 1",
-     "code": "HIB 177",
-     "title": "Positive 1",
-     "count": 0
-    },
-    {
-     "name": "HIB 217 Positive 3",
-     "code": "HIB 217",
-     "title": "Positive 3",
-     "count": 0
-    },
-    {
-     "name": "HIB 407 Tonic New Beat",
-     "code": "HIB 407",
-     "title": "Tonic New Beat",
-     "count": 0
-    },
-    {
-     "name": "HIB 437 Rare Themes",
-     "code": "HIB 437",
-     "title": "Rare Themes",
-     "count": 0
-    },
-    {
-     "name": "HIB 467 Selected Themes",
-     "code": "HIB 467",
-     "title": "Selected Themes",
-     "count": 0
-    },
-    {
-     "name": "HIB 497 Fashion Concept",
-     "code": "HIB 497",
-     "title": "Fashion Concept",
      "count": 0
     }
    ]
