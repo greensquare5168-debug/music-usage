@@ -274,13 +274,8 @@ def main():
     }
     with open(os.path.join(BASE, 'stats.json'), 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=1)
-
-    tracks_full = build_tracks(t2a)
-    with open(os.path.join(BASE, 'tracks.json'), 'w', encoding='utf-8') as f:
-        json.dump({'source_date': data['source_date'], 'count': len(tracks_full),
-                   'tracks': tracks_full}, f, ensure_ascii=False, separators=(',', ':'))
-    print('OK labels=%d albums=%d pages=%d records=%d tracks=%d'
-          % (len(labels), len(best), len(all_pages), records, len(tracks_full)))
+    print('OK labels=%d albums=%d pages=%d records=%d'
+          % (len(labels), len(best), len(all_pages), records))
 
 if __name__ == '__main__':
     main()
