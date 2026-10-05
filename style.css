@@ -1,0 +1,40 @@
+:root{
+  --bg:#f5f7fb; --card:#ffffff; --ink:#1e2430; --muted:#6b7688;
+  --line:#e6eaf2; --brand:#3b6ef6; --accent:#12b5a5;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+     font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,-apple-system,sans-serif;}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 60px;}
+a{color:var(--brand);text-decoration:none}
+a:hover{text-decoration:underline}
+header{margin-bottom:20px}
+h1{margin:0 0 6px;font-size:26px;letter-spacing:.5px}
+.sub{color:var(--muted);font-size:13px;line-height:1.6}
+.crumb{font-size:13px;color:var(--muted);margin-bottom:10px}
+.crumb b{color:var(--ink);font-size:20px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 6px}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:12px;
+      padding:12px 16px;min-width:110px;flex:1 1 110px}
+.chip .n{font-size:22px;font-weight:700;color:var(--brand)}
+.chip .l{font-size:12px;color:var(--muted);margin-top:2px}
+.grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:18px}
+@media(min-width:900px){.grid{grid-template-columns:1fr 1fr}.wide{grid-column:1 / -1}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+      padding:16px 18px 12px;box-shadow:0 1px 2px rgba(20,30,60,.03)}
+.card h2{margin:0 0 4px;font-size:15px;font-weight:700}
+.card .hint{margin:0 0 10px;font-size:12px;color:var(--muted)}
+.cbox{position:relative}
+.note{background:#fff8ec;border:1px solid #ffe2b8;color:#8a5a00;
+      padding:10px 12px;border-radius:10px;font-size:12.5px;line-height:1.6;margin:14px 0 0}
+.err{background:#fff4f4;border:1px solid #ffd7d7;color:#b3261e;padding:10px 12px;
+     border-radius:10px;font-size:13px;margin-top:12px;display:none}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line)}
+th{color:var(--muted);font-weight:600;font-size:12px}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+tbody tr:hover{background:#f7f9ff}
+.rank{display:inline-block;min-width:26px;color:var(--muted);font-size:12px}
+.bar-mini{height:7px;border-radius:4px;background:#3b6ef6;display:inline-block;vertical-align:middle}
+footer{margin-top:26px;color:var(--muted);font-size:12px;line-height:1.7}
+code{background:#eef1f7;padding:1px 5px;border-radius:5px;font-size:12px}

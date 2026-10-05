@@ -3,137 +3,107 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>音樂使用狀況｜知識平台網</title>
+<title>音樂使用狀況｜廠牌總覽</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-<style>
-  :root{
-    --bg:#f5f7fb; --card:#ffffff; --ink:#1e2430; --muted:#6b7688;
-    --line:#e6eaf2; --brand:#3b6ef6; --accent:#12b5a5;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);
-       font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,-apple-system,sans-serif;}
-  .wrap{max-width:1180px;margin:0 auto;padding:28px 20px 60px;}
-  header{margin-bottom:20px}
-  h1{margin:0 0 6px;font-size:26px;letter-spacing:.5px}
-  .sub{color:var(--muted);font-size:13px;line-height:1.6}
-  .chips{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 6px}
-  .chip{background:var(--card);border:1px solid var(--line);border-radius:12px;
-        padding:12px 16px;min-width:120px;flex:1 1 120px}
-  .chip .n{font-size:22px;font-weight:700;color:var(--brand)}
-  .chip .l{font-size:12px;color:var(--muted);margin-top:2px}
-  .grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:18px}
-  @media(min-width:900px){.grid{grid-template-columns:1fr 1fr}
-    .wide{grid-column:1 / -1}}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
-        padding:16px 18px 10px;box-shadow:0 1px 2px rgba(20,30,60,.03)}
-  .card h2{margin:0 0 4px;font-size:15px;font-weight:700}
-  .card .hint{margin:0 0 10px;font-size:12px;color:var(--muted)}
-  .cbox{position:relative}
-  footer{margin-top:26px;color:var(--muted);font-size:12px;line-height:1.7}
-  .err{background:#fff4f4;border:1px solid #ffd7d7;color:#b3261e;padding:10px 12px;
-       border-radius:10px;font-size:13px;margin-top:12px;display:none}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="wrap">
   <header>
     <h1>🎵 音樂使用狀況</h1>
-    <div class="sub">知識平台網・罐頭音樂研究所　｜　依全站索引統計（資料日 <span id="srcdate">—</span>）</div>
+    <div class="sub">知識平台網・罐頭音樂研究所　｜　依全站索引統計（資料日 <span id="srcdate">—</span>）<br>
+      先看<b>廠牌</b>，點進去再看該廠牌的<b>專輯</b>。</div>
     <div class="chips" id="chips"></div>
-    <div class="err" id="err">載入 stats.json 失敗。請確認與 index.html 同目錄，並用 http(s) 開啟（file:// 會被瀏覽器封鎖）。</div>
+    <div class="note" id="unknown" style="display:none"></div>
+    <div class="err" id="err">載入 stats.json 失敗。請確認與 index.html 同目錄，並以 http(s) 開啟。</div>
   </header>
 
   <div class="grid">
-    <div class="card wide"><h2>使用最多的曲目 TOP 30</h2>
-      <p class="hint">依「站上使用頁數」排序</p><div class="cbox" id="box-tracks"></div></div>
+    <div class="card wide">
+      <h2>廠牌使用排行 TOP 40</h2>
+      <p class="hint">依「站上使用頁數」合計；點條形即可進入該廠牌的專輯</p>
+      <div class="cbox" id="box-labels"></div>
+    </div>
 
-    <div class="card"><h2>使用最多的作曲者 TOP 20</h2>
-      <p class="hint">各曲目使用頁數合計</p><div class="cbox" id="box-composers"></div></div>
-
-    <div class="card"><h2>平台分布</h2>
-      <p class="hint">各平台使用到音樂的頁數</p><div class="cbox" id="box-platforms"></div></div>
-
-    <div class="card wide"><h2>使用最多的專輯 TOP 30</h2>
-      <p class="hint">依站上使用頁數</p><div class="cbox" id="box-albums"></div></div>
-
-    <div class="card wide"><h2>節目分布 TOP 20</h2>
-      <p class="hint">各節目使用到音樂的頁數</p><div class="cbox" id="box-programs"></div></div>
+    <div class="card wide">
+      <h2>全部廠牌（點列進入專輯）</h2>
+      <p class="hint">共 <span id="labcount">—</span> 個廠牌</p>
+      <table><thead><tr><th style="width:44px">#</th><th>廠牌</th><th class="n">使用頁數</th><th class="n">專輯數</th><th style="width:180px"></th></tr></thead>
+        <tbody id="lablist"></tbody></table>
+    </div>
   </div>
 
   <footer>
-    資料來源：<code>網站音樂索引/all_20260925_full.jsonl</code>、<code>站上使用最多_排行_20261003.txt</code>、<code>全站專輯_未建_依使用排序_20261003.txt</code><br>
+    資料來源：<code>網站音樂索引/all_20260925_full.jsonl</code>、<code>全站專輯_未建_依使用排序_含平台_20261003.txt</code><br>
     產生時間：<span id="gen">—</span>　｜　重跑更新：<code>python3 build_stats.py</code>
   </footer>
 </div>
 
 <script>
 const NUM = n => n.toLocaleString('en-US');
+const enc = s => encodeURIComponent(s);
+const go  = name => { location.href = 'label.html?b=' + enc(name); };
 
-function makeBar(boxId, labels, values, {color='#3b6ef6', height=null, max=null,
-                                       horizontal=true, yTitle='頁數'} = {}){
+function makeBar(boxId, labels, values, color, height, onClick){
   const box = document.getElementById(boxId);
-  const h = height || Math.max(260, labels.length * (horizontal?26:34));
-  box.style.height = h + 'px';
+  box.style.height = height + 'px';
   const ctx = document.createElement('canvas');
   box.appendChild(ctx);
   return new Chart(ctx, {
     type:'bar',
     data:{ labels, datasets:[{ data:values, backgroundColor:color,
-          borderRadius:5, borderSkipped:false, maxBarThickness:22 }] },
+           borderRadius:5, borderSkipped:false, maxBarThickness:20 }] },
     options:{
-      indexAxis: horizontal ? 'y' : 'x',
-      responsive:true, maintainAspectRatio:false,
+      indexAxis:'y', responsive:true, maintainAspectRatio:false,
       animation:{duration:600},
+      onClick:(e,els)=>{ if(els.length && onClick) onClick(els[0].index); },
+      onHover:(e,els)=>{ e.native.target.style.cursor = els.length&&onClick ? 'pointer':'default'; },
       plugins:{ legend:{display:false},
         tooltip:{ callbacks:{ label:c=>' '+NUM(c.raw)+' 頁' } } },
       scales:{
-        x:{ beginAtZero:true, suggestedMax:max, grid:{color:'#eef1f7'},
-            ticks:{font:{size:11}, color:'#6b7688', precision:0} },
-        y:{ grid:{display:false},
-            ticks:{font:{size:11}, color:'#1e2430', autoSkip:false} }
+        x:{beginAtZero:true, grid:{color:'#eef1f7'}, ticks:{font:{size:11}, color:'#6b7688', precision:0}},
+        y:{grid:{display:false}, ticks:{font:{size:11}, color:'#1e2430', autoSkip:false}}
       }
     }
   });
 }
 
-fetch('stats.json',{cache:'no-store'}).then(r=>{
-  if(!r.ok) throw new Error(r.status);
-  return r.json();
-}).then(d=>{
+fetch('stats.json',{cache:'no-store'}).then(r=>{ if(!r.ok) throw new Error(r.status); return r.json(); })
+.then(d=>{
   document.getElementById('srcdate').textContent = d.source_date;
   document.getElementById('gen').textContent = d.generated;
-
   const s = d.summary;
   document.getElementById('chips').innerHTML = [
-    ['音樂頁面數', s.pages], ['曲目紀錄筆數', s.records],
-    ['曲目種類', s.tracks], ['專輯數', s.albums]
+    ['廠牌數', s.labels], ['專輯數', s.albums], ['音樂頁面數', s.pages], ['曲目紀錄筆數', s.records]
   ].map(([l,n])=>`<div class="chip"><div class="n">${NUM(n)}</div><div class="l">${l}</div></div>`).join('');
 
-  // 曲目（標籤：曲名 — 作曲者）
-  makeBar('box-tracks',
-    d.topTracks.map(t=>t.composer? `${t.name} — ${t.composer}` : t.name),
-    d.topTracks.map(t=>t.count), {color:'#3b6ef6'});
+  const unk = d.labels.filter(l => l.name.startsWith('（'))[0];
+  const labels = d.labels.filter(l => !l.name.startsWith('（'));
+  const top = labels.slice(0, 40);
+  makeBar('box-labels', top.map(l=>l.name), top.map(l=>l.total), '#3b6ef6',
+          Math.max(300, top.length*26), i => go(top[i].name));
 
-  // 作曲者
-  makeBar('box-composers', d.topComposers.map(c=>c.name),
-    d.topComposers.map(c=>c.count), {color:'#7c5cf0', height:Math.max(300,d.topComposers.length*26)});
+  if (unk){
+    const n = document.getElementById('unknown');
+    n.style.display = 'block';
+    n.innerHTML = `⚠️ 有 <b>${NUM(unk.n)}</b> 張專輯（使用 <b>${NUM(unk.total)}</b> 頁）在資料裡<b>沒有標廠牌</b>，
+      未列入排行 —— <a href="label.html?b=${enc(unk.name)}">點此查看 ${unk.name}</a>。之後可補齊。`;
+  }
 
-  // 平台（直立）
-  makeBar('box-platforms', d.platforms.map(p=>p.name), d.platforms.map(p=>p.count),
-    {color:'#12b5a5', horizontal:false, height:280});
-
-  // 專輯
-  makeBar('box-albums', d.topAlbums.map(a=>a.name), d.topAlbums.map(a=>a.count),
-    {color:'#f2994a', height:Math.max(320,d.topAlbums.length*26)});
-
-  // 節目
-  makeBar('box-programs', d.programs.map(p=>p.name), d.programs.map(p=>p.count),
-    {color:'#eb5757', height:Math.max(320,d.programs.length*26)});
-}).catch(e=>{
-  document.getElementById('err').style.display='block';
-  console.error(e);
-});
+  document.getElementById('labcount').textContent = NUM(d.labels.length);
+  const max = d.labels[0] ? d.labels[0].total : 1;
+  document.getElementById('lablist').innerHTML = d.labels.map((l,i)=>`
+    <tr data-name="${l.name.replace(/"/g,'&quot;')}" style="cursor:pointer">
+      <td><span class="rank">${i+1}</span></td>
+      <td>${l.name}</td>
+      <td class="n">${NUM(l.total)}</td>
+      <td class="n">${NUM(l.n)}</td>
+      <td><span class="bar-mini" style="width:${Math.round(l.total/max*170)}px"></span></td>
+    </tr>`).join('');
+  document.getElementById('lablist').addEventListener('click', ev=>{
+    const tr = ev.target.closest('tr[data-name]'); if (tr) go(tr.dataset.name);
+  });
+}).catch(e=>{ document.getElementById('err').style.display='block'; console.error(e); });
 </script>
 </body>
 </html>

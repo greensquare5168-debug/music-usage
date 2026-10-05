@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>音樂使用狀況｜廠牌</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="crumb"><a href="index.html">← 回廠牌總覽</a>　/　<b id="brand">—</b></div>
+  <header>
+    <h1 id="h1">—</h1>
+    <div class="sub">知識平台網・罐頭音樂研究所　｜　該廠牌專輯的站上使用狀況（資料日 <span id="srcdate">—</span>）</div>
+    <div class="chips" id="chips"></div>
+    <div class="err" id="err">找不到這個廠牌，或載入 stats.json 失敗。<a href="index.html">回廠牌總覽</a></div>
+  </header>
+
+  <div class="grid">
+    <div class="card wide">
+      <h2>該廠牌專輯使用排行</h2>
+      <p class="hint">依「站上使用頁數」排序</p>
+      <div class="cbox" id="box-albums"></div>
+    </div>
+    <div class="card wide">
+      <h2>專輯清單</h2>
+      <p class="hint">共 <span id="acount">—</span> 張</p>
+      <table><thead><tr><th style="width:44px">#</th><th>專輯</th><th class="n">使用頁數</th><th style="width:180px"></th></tr></thead>
+        <tbody id="alist"></tbody></table>
+    </div>
+  </div>
+
+  <footer>
+    資料來源：<code>全站專輯_未建_依使用排序_含平台_20261003.txt</code>　｜　產生時間：<span id="gen">—</span>
+  </footer>
+</div>
+
+<script>
+const NUM = n => n.toLocaleString('en-US');
+const params = new URLSearchParams(location.search);
+const want = params.get('b') || '';
+
+fetch('stats.json',{cache:'no-store'}).then(r=>{ if(!r.ok) throw new Error(r.status); return r.json(); })
+.then(d=>{
+  const lab = d.labels.find(l => l.name === want);
+  if (!lab) throw new Error('brand not found');
+  document.title = '音樂使用狀況｜' + lab.name;
+  document.getElementById('brand').textContent = lab.name;
+  document.getElementById('h1').textContent = '🏷️ ' + lab.name;
+  document.getElementById('srcdate').textContent = d.source_date;
+  document.getElementById('gen').textContent = d.generated;
+  document.getElementById('chips').innerHTML = [
+    ['使用頁數', lab.total], ['專輯數', lab.n],
+    ['最多的一張', lab.albums[0] ? lab.albums[0].count : 0]
+  ].map(([l,n])=>`<div class="chip"><div class="n">${NUM(n)}</div><div class="l">${l}</div></div>`).join('');
+
+  const alb = lab.albums;
+  const box = document.getElementById('box-albums');
+  const h = Math.max(300, alb.length * 24);
+  box.style.height = h + 'px';
+  const ctx = document.createElement('canvas'); box.appendChild(ctx);
+  new Chart(ctx, {
+    type:'bar',
+    data:{ labels: alb.map(a=>a.name), datasets:[{ data: alb.map(a=>a.count),
+           backgroundColor:'#12b5a5', borderRadius:5, borderSkipped:false, maxBarThickness:20 }] },
+    options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false, animation:{duration:600},
+      plugins:{ legend:{display:false}, tooltip:{callbacks:{label:c=>' '+NUM(c.raw)+' 頁'}} },
+      scales:{ x:{beginAtZero:true, grid:{color:'#eef1f7'}, ticks:{font:{size:11}, color:'#6b7688', precision:0}},
+               y:{grid:{display:false}, ticks:{font:{size:11}, color:'#1e2430', autoSkip:false}} } }
+  });
+
+  document.getElementById('acount').textContent = NUM(alb.length);
+  const max = alb[0] ? alb[0].count : 1;
+  document.getElementById('alist').innerHTML = alb.map((a,i)=>`
+    <tr><td><span class="rank">${i+1}</span></td><td>${a.name}</td>
+      <td class="n">${NUM(a.count)}</td>
+      <td><span class="bar-mini" style="width:${Math.round(a.count/max*170)}px;background:#12b5a5"></span></td></tr>`).join('');
+}).catch(e=>{ document.getElementById('err').style.display='block'; console.error(e); });
+</script>
+</body>
+</html>
