@@ -1,0 +1,500 @@
+{
+  "generated": "2026-10-05",
+  "source_date": "2026-09-25",
+  "summary": {
+    "pages": 1020,
+    "records": 9604,
+    "tracks": 60,
+    "albums": 30
+  },
+  "topTracks": [
+    {
+      "name": "Crazy Party",
+      "composer": "Armin Sabol",
+      "count": 67
+    },
+    {
+      "name": "擁有",
+      "composer": "",
+      "count": 65
+    },
+    {
+      "name": "The Whelk",
+      "composer": "Jonathan Hodge",
+      "count": 48
+    },
+    {
+      "name": "Toccata Singers",
+      "composer": "Marc Durst",
+      "count": 44
+    },
+    {
+      "name": "Baby Moog",
+      "composer": "Laurent Lombard",
+      "count": 42
+    },
+    {
+      "name": "Jay Bee",
+      "composer": "Richard Kenton",
+      "count": 40
+    },
+    {
+      "name": "Mandolin Boogie",
+      "composer": "Laurent Lombard",
+      "count": 40
+    },
+    {
+      "name": "Mr Digital",
+      "composer": "Jonathan Hodge",
+      "count": 37
+    },
+    {
+      "name": "Carnival",
+      "composer": "Christian Girardot/Steve Martin",
+      "count": 34
+    },
+    {
+      "name": "Amiable Old Vendor",
+      "composer": "Zhi Hua Zhou",
+      "count": 33
+    },
+    {
+      "name": "Crazy Moog",
+      "composer": "Laurent Lombard",
+      "count": 33
+    },
+    {
+      "name": "Shipmates",
+      "composer": "Stephen Paul Martin",
+      "count": 32
+    },
+    {
+      "name": "Brass Blast",
+      "composer": "Dominic Francis Glynn & Martin Smith",
+      "count": 32
+    },
+    {
+      "name": "The Look In Your Eyes",
+      "composer": "Milo Deering & Ruben Ayala",
+      "count": 32
+    },
+    {
+      "name": "Under the Stars",
+      "composer": "Daniel May & Marc Ferrari",
+      "count": 32
+    },
+    {
+      "name": "Coconut Island",
+      "composer": "Richard Joel Rothstein",
+      "count": 31
+    },
+    {
+      "name": "Children Clownery",
+      "composer": "Giovanni Lodigiani",
+      "count": 31
+    },
+    {
+      "name": "Cat & Mouse",
+      "composer": "Andrew Blythe & Marten Andrew Joustra/Hendrik Hennie Bekker/Hiroshi Takami/Thomas Foyer",
+      "count": 29
+    },
+    {
+      "name": "Yeah Baby",
+      "composer": "Andrew Timothy Blythe & Marten Andrew Joustra",
+      "count": 29
+    },
+    {
+      "name": "Bedrock",
+      "composer": "Kem Kraft",
+      "count": 27
+    },
+    {
+      "name": "Another Fine Mess",
+      "composer": "Grant Geissman/Pete Kelly",
+      "count": 27
+    },
+    {
+      "name": "Techno-Kids",
+      "composer": "Klaus Back & Tini Beier",
+      "count": 27
+    },
+    {
+      "name": "Nostalgia",
+      "composer": "Judson Maher",
+      "count": 26
+    },
+    {
+      "name": "Happy Moog",
+      "composer": "Laurent Lombard",
+      "count": 26
+    },
+    {
+      "name": "Wonderful Time",
+      "composer": "Marc Dall'Anese",
+      "count": 26
+    },
+    {
+      "name": "Rise and Shine",
+      "composer": "Vince Webb",
+      "count": 26
+    },
+    {
+      "name": "Firecracker",
+      "composer": "Jiang Li/Jiang Li",
+      "count": 25
+    },
+    {
+      "name": "Something Wrong",
+      "composer": "Bohus Kantor",
+      "count": 25
+    },
+    {
+      "name": "Organ Grinder",
+      "composer": "Ilene Novog",
+      "count": 24
+    },
+    {
+      "name": "Mystery Tunnel",
+      "composer": "Lars Kurz/Lars Kurz",
+      "count": 24
+    }
+  ],
+  "topComposers": [
+    {
+      "name": "Jonathan Hodge",
+      "count": 273
+    },
+    {
+      "name": "Laurent Lombard",
+      "count": 227
+    },
+    {
+      "name": "Stephen Paul Martin",
+      "count": 190
+    },
+    {
+      "name": "Andrew Blythe & Marten Andrew Joustra",
+      "count": 176
+    },
+    {
+      "name": "John Charles Fiddy & Sammy Burdson",
+      "count": 138
+    },
+    {
+      "name": "Thomas Foyer",
+      "count": 131
+    },
+    {
+      "name": "Zhi Hua Zhou",
+      "count": 116
+    },
+    {
+      "name": "David Graham Farnon",
+      "count": 104
+    },
+    {
+      "name": "Marc Dall'Anese",
+      "count": 100
+    },
+    {
+      "name": "Andrew Timothy Blythe & Marten Andrew Joustra",
+      "count": 96
+    },
+    {
+      "name": "Xavier Edmunds & Zoltan Biscotti",
+      "count": 90
+    },
+    {
+      "name": "Richard Cassman & Vyvyan James Hope-Scott",
+      "count": 88
+    },
+    {
+      "name": "Hendrik Hennie Bekker",
+      "count": 86
+    },
+    {
+      "name": "Giovanni Lodigiani",
+      "count": 86
+    },
+    {
+      "name": "Happy Step",
+      "count": 82
+    },
+    {
+      "name": "James Rast",
+      "count": 78
+    },
+    {
+      "name": "Steve Martin",
+      "count": 72
+    },
+    {
+      "name": "Serpens",
+      "count": 72
+    },
+    {
+      "name": "John Denis Hawksworth",
+      "count": 70
+    },
+    {
+      "name": "Armin Sabol",
+      "count": 68
+    }
+  ],
+  "topAlbums": [
+    {
+      "name": "CAR 176 Children/Comedy/Shorts 2.（1990）",
+      "count": 132,
+      "lib": "CPM Main Series"
+    },
+    {
+      "name": "BRO 21 Classic Film and TV Four: Comic Cuts（2001）",
+      "count": 91,
+      "lib": "Bruton Music pre-2004 CD"
+    },
+    {
+      "name": "CAR 156 Children/Comedy/Shorts（1990）",
+      "count": 86,
+      "lib": "CPM Main Series"
+    },
+    {
+      "name": "MAT 120 The Jingle Box（1989）",
+      "count": 81,
+      "lib": "Match Music"
+    },
+    {
+      "name": "PML-CD 1045 Playtime（1989）",
+      "count": 81,
+      "lib": "Parry Music CD/digital"
+    },
+    {
+      "name": "IVOX 021 Smile With Charlie（2000）",
+      "count": 80,
+      "lib": "Intervox CD/digital"
+    },
+    {
+      "name": "CAR 150 Cartoon/Comedy/Children（1990）",
+      "count": 78,
+      "lib": "CPM Main Series"
+    },
+    {
+      "name": "CAR 237 Fun/Novelty/Kids（1996）",
+      "count": 68,
+      "lib": "CPM Main Series"
+    },
+    {
+      "name": "MHE 7 Jingles, Bumpers and Donuts（1988）",
+      "count": 65,
+      "lib": "Music House CD/digital"
+    },
+    {
+      "name": "CAR 136 Comedy/Cartoon/Children（1989）",
+      "count": 63,
+      "lib": "CPM Main Series"
+    },
+    {
+      "name": "GML-C1 Music Lexicon: C1（1994）",
+      "count": 57,
+      "lib": "miscellaneous Arcadia Music"
+    },
+    {
+      "name": "UBM 1128 1988（）",
+      "count": 56,
+      "lib": "—"
+    },
+    {
+      "name": "CAR 171 Jingles Vol. 3（1990）",
+      "count": 55,
+      "lib": "CPM Main Series"
+    },
+    {
+      "name": "PML-CD 1148 Comicals（1996）",
+      "count": 53,
+      "lib": "Parry Music CD/digital"
+    },
+    {
+      "name": "ATMOS 15 1990（）",
+      "count": 51,
+      "lib": "—"
+    },
+    {
+      "name": "BRH 34 Firecracker / Street Sounds（1988）",
+      "count": 50,
+      "lib": "Bruton Music pre-2004 CD / Bruton Music vinyl"
+    },
+    {
+      "name": "MAT 002 TV Themes（198）",
+      "count": 48,
+      "lib": "—"
+    },
+    {
+      "name": "CAR 257 Comedy/TV/Entertainment（1997）",
+      "count": 47,
+      "lib": "CPM Main Series"
+    },
+    {
+      "name": "KPM 709 Sonic Logos, Links and Beds 1（2009）",
+      "count": 45,
+      "lib": "KPM post-2005 CD/digital albums (KPM 600-1000)"
+    },
+    {
+      "name": "ESL 021 Virtually Unplugged（1995）",
+      "count": 43,
+      "lib": "Standard Music Library CD/digital"
+    },
+    {
+      "name": "MAT 102 TV Themes（1987）",
+      "count": 43,
+      "lib": "Match Music"
+    },
+    {
+      "name": "MHE 57 Jingles（1997）",
+      "count": 42,
+      "lib": "Music House CD/digital"
+    },
+    {
+      "name": "PML-CD 1096 Fun and Games（1992）",
+      "count": 42,
+      "lib": "Parry Music CD/digital"
+    },
+    {
+      "name": "SEL 5142 Spots, Links & Bridges（1994）",
+      "count": 42,
+      "lib": "Selected Sound CD/digital"
+    },
+    {
+      "name": "BC 3 Comedy and Mayhem（2001）",
+      "count": 41,
+      "lib": "miscellaneous Atmosphere"
+    },
+    {
+      "name": "MHE 40 Television Today (Vol. 3)（1994）",
+      "count": 41,
+      "lib": "Music House CD/digital"
+    },
+    {
+      "name": "XCD 004 Cheeze（1997）",
+      "count": 41,
+      "lib": "X-Series"
+    },
+    {
+      "name": "CAR 252 Fun and Games（1997）",
+      "count": 40,
+      "lib": "CPM Main Series"
+    },
+    {
+      "name": "CAV-CD 49 Silent Movie Music（1993）",
+      "count": 40,
+      "lib": "Cavendish Music"
+    },
+    {
+      "name": "CM 35 The Jingle Bank 5（1994）",
+      "count": 40,
+      "lib": "Castle Music CD/digital"
+    }
+  ],
+  "platforms": [
+    {
+      "name": "yoyotv",
+      "count": 421
+    },
+    {
+      "name": "巧連智",
+      "count": 170
+    },
+    {
+      "name": "公視",
+      "count": 93
+    },
+    {
+      "name": "momo親子台",
+      "count": 51
+    },
+    {
+      "name": "古古食",
+      "count": 32
+    }
+  ],
+  "programs": [
+    {
+      "name": "yoyo點點名",
+      "count": 209
+    },
+    {
+      "name": "大頭小狀元",
+      "count": 67
+    },
+    {
+      "name": "巧連智cd",
+      "count": 58
+    },
+    {
+      "name": "巧連智dvd",
+      "count": 50
+    },
+    {
+      "name": "power-house",
+      "count": 48
+    },
+    {
+      "name": "狗狗週記",
+      "count": 44
+    },
+    {
+      "name": "水果冰淇淋",
+      "count": 41
+    },
+    {
+      "name": "巧連智奇酷網",
+      "count": 38
+    },
+    {
+      "name": "料理甜甜圈",
+      "count": 33
+    },
+    {
+      "name": "流言追追追",
+      "count": 30
+    },
+    {
+      "name": "yoyo童話世界",
+      "count": 30
+    },
+    {
+      "name": "point",
+      "count": 27
+    },
+    {
+      "name": "atmosphere",
+      "count": 26
+    },
+    {
+      "name": "巧連智遊戲光碟",
+      "count": 24
+    },
+    {
+      "name": "鹹魚小隊",
+      "count": 21
+    },
+    {
+      "name": "match",
+      "count": 20
+    },
+    {
+      "name": "yoyo嘻遊記",
+      "count": 20
+    },
+    {
+      "name": "sosm大樂隊",
+      "count": 15
+    },
+    {
+      "name": "健康即時通",
+      "count": 13
+    },
+    {
+      "name": "原來如此食物的由來",
+      "count": 13
+    }
+  ]
+}
