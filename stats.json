@@ -4,15 +4,15 @@
  "summary": {
   "pages": 1020,
   "records": 9604,
-  "labels": 141,
+  "labels": 142,
   "albums": 3888,
   "tracks": 60
  },
  "labels": [
   {
    "name": "CPM",
-   "total": 1169,
-   "n": 110,
+   "total": 1106,
+   "n": 99,
    "albums": [
     {
      "name": "CAR 176 Children/Comedy/Shorts 2",
@@ -93,12 +93,6 @@
      "count": 23
     },
     {
-     "name": "CAS 016 Light Music/Light Activity",
-     "code": "CAS 016",
-     "title": "Light Music/Light Activity",
-     "count": 20
-    },
-    {
      "name": "CLASS 011 Classical Selection 2",
      "code": "CLASS 011",
      "title": "Classical Selection 2",
@@ -165,12 +159,6 @@
      "count": 12
     },
     {
-     "name": "CAS 015 Comedy/Cartoon",
-     "code": "CAS 015",
-     "title": "Comedy/Cartoon",
-     "count": 12
-    },
-    {
      "name": "CAR 275 Music for the Movies 1",
      "code": "CAR 275",
      "title": "Music for the Movies 1",
@@ -180,12 +168,6 @@
      "name": "CAR 379 Reggae & Ska",
      "code": "CAR 379",
      "title": "Reggae & Ska",
-     "count": 9
-    },
-    {
-     "name": "CAS 038 The Big Parade",
-     "code": "CAS 038",
-     "title": "The Big Parade",
      "count": 9
     },
     {
@@ -222,12 +204,6 @@
      "name": "CAR 323 Rock Songs/Instrumentals",
      "code": "CAR 323",
      "title": "Rock Songs/Instrumentals",
-     "count": 7
-    },
-    {
-     "name": "CAS 003 Light-Hearted/Comedy/Cartoon",
-     "code": "CAS 003",
-     "title": "Light-Hearted/Comedy/Cartoon",
      "count": 7
     },
     {
@@ -306,12 +282,6 @@
      "name": "CAR 377 Crime Scene Investigation - 2",
      "code": "CAR 377",
      "title": "Crime Scene Investigation - 2",
-     "count": 5
-    },
-    {
-     "name": "CAS 033 Children - Fun & Laughter",
-     "code": "CAS 033",
-     "title": "Children - Fun & Laughter",
      "count": 5
     },
     {
@@ -429,12 +399,6 @@
      "count": 3
     },
     {
-     "name": "CAS 007 Dance Hall/Swing/Jazz/Lounge",
-     "code": "CAS 007",
-     "title": "Dance Hall/Swing/Jazz/Lounge",
-     "count": 3
-    },
-    {
      "name": "CAR 121 National Anthems",
      "code": "CAR 121",
      "title": "National Anthems",
@@ -474,18 +438,6 @@
      "name": "CAR 422 Ultimate Hollywood Trailers 1",
      "code": "CAR 422",
      "title": "Ultimate Hollywood Trailers 1",
-     "count": 2
-    },
-    {
-     "name": "CAS 018 Big Band & Jazz Combos",
-     "code": "CAS 018",
-     "title": "Big Band & Jazz Combos",
-     "count": 2
-    },
-    {
-     "name": "CAS 019 Jazzy Vibes",
-     "code": "CAS 019",
-     "title": "Jazzy Vibes",
      "count": 2
     },
     {
@@ -648,24 +600,6 @@
      "name": "CAR 427 Electro Swing",
      "code": "CAR 427",
      "title": "Electro Swing",
-     "count": 1
-    },
-    {
-     "name": "CAS 008 Well Known Tunes/Marches",
-     "code": "CAS 008",
-     "title": "Well Known Tunes/Marches",
-     "count": 1
-    },
-    {
-     "name": "CAS 010 City Life/Marching Bands",
-     "code": "CAS 010",
-     "title": "City Life/Marching Bands",
-     "count": 1
-    },
-    {
-     "name": "CAS 017 Fanfares",
-     "code": "CAS 017",
-     "title": "Fanfares",
      "count": 1
     },
     {
@@ -14308,6 +14242,79 @@
      "name": "DED 196 Trucker Rock",
      "code": "DED 196",
      "title": "Trucker Rock",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "name": "CPM Archive Series",
+   "total": 63,
+   "n": 11,
+   "albums": [
+    {
+     "name": "CAS 016 Light Music/Light Activity",
+     "code": "CAS 016",
+     "title": "Light Music/Light Activity",
+     "count": 20
+    },
+    {
+     "name": "CAS 015 Comedy/Cartoon",
+     "code": "CAS 015",
+     "title": "Comedy/Cartoon",
+     "count": 12
+    },
+    {
+     "name": "CAS 038 The Big Parade",
+     "code": "CAS 038",
+     "title": "The Big Parade",
+     "count": 9
+    },
+    {
+     "name": "CAS 003 Light-Hearted/Comedy/Cartoon",
+     "code": "CAS 003",
+     "title": "Light-Hearted/Comedy/Cartoon",
+     "count": 7
+    },
+    {
+     "name": "CAS 033 Children - Fun & Laughter",
+     "code": "CAS 033",
+     "title": "Children - Fun & Laughter",
+     "count": 5
+    },
+    {
+     "name": "CAS 007 Dance Hall/Swing/Jazz/Lounge",
+     "code": "CAS 007",
+     "title": "Dance Hall/Swing/Jazz/Lounge",
+     "count": 3
+    },
+    {
+     "name": "CAS 018 Big Band & Jazz Combos",
+     "code": "CAS 018",
+     "title": "Big Band & Jazz Combos",
+     "count": 2
+    },
+    {
+     "name": "CAS 019 Jazzy Vibes",
+     "code": "CAS 019",
+     "title": "Jazzy Vibes",
+     "count": 2
+    },
+    {
+     "name": "CAS 008 Well Known Tunes/Marches",
+     "code": "CAS 008",
+     "title": "Well Known Tunes/Marches",
+     "count": 1
+    },
+    {
+     "name": "CAS 010 City Life/Marching Bands",
+     "code": "CAS 010",
+     "title": "City Life/Marching Bands",
+     "count": 1
+    },
+    {
+     "name": "CAS 017 Fanfares",
+     "code": "CAS 017",
+     "title": "Fanfares",
      "count": 1
     }
    ]
