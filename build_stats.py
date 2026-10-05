@@ -38,8 +38,19 @@ def split_label(s):
         return m.group(1).strip(), m.group(2).strip()
     return s, ''
 
+def norm_key(s):
+    return re.sub(r'\s+', ' ', (s or '').strip()).lower().rstrip('.').strip()
+
+def parse_track_label(label):
+    """導覽曲目標籤 → (曲名, 作曲者)：'Fun Run - Brian Nimens (尚未發現使用作品)' → ('Fun Run','Brian Nimens')"""
+    s = re.sub(r'\s*\(\s*尚未發現使用作品\s*\)\s*$', '', (label or '').strip()).strip()
+    if ' - ' in s:
+        a, b = s.split(' - ', 1)
+        return norm_track(a.strip()), b.strip()
+    return norm_track(s), ''
+
 def main():
-    # 節目頁 → 曲目集合
+    # 節目頁 → {(曲名, 作曲者)} 集合（比對要同名同作者，例：Fun Run 有不同作者）
     page_tracks = collections.defaultdict(set)
     for line in open(INDEX, encoding='utf-8'):
         line = line.strip()
@@ -49,7 +60,7 @@ def main():
         if r.get('platform') in PLATFORMS:
             t = norm_track(r.get('track'))
             if t:
-                page_tracks[r['url_path']].add(t)
+                page_tracks[r['url_path']].add((norm_key(t), norm_key(r.get('composer'))))
 
     nav = json.load(open(NAV, encoding='utf-8'))
     lib_name, albums, tracks = {}, {}, collections.defaultdict(list)
@@ -66,9 +77,9 @@ def main():
             continue
         parent = e['href'].rsplit('/', 1)[0]
         if parent in albums:
-            t = re.split(r'\s+-\s+', e.get('label', ''))[0].strip()
+            t, c = parse_track_label(e.get('label', ''))
             if t:
-                tracks[parent].append(t)
+                tracks[parent].append((norm_key(t), norm_key(c)))
 
     # 各專輯使用頁數
     rows = []
