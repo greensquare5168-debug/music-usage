@@ -91,6 +91,7 @@ def split_album_name(name):
     return ' '.join(toks[:k + 1]), ' '.join(toks[k + 1:]).lstrip('- ').strip()
 
 def load_program_pages():
+    """url_path -> set((曲名, 作曲者))"""
     pg = collections.defaultdict(set)
     for line in open(INDEX, encoding='utf-8'):
         line = line.strip()
@@ -100,11 +101,11 @@ def load_program_pages():
         if r.get('platform') in PLATFORMS:
             t = norm_track(r.get('track'))
             if t:
-                pg[r['url_path']].add(t)
+                pg[r['url_path']].add((t, (r.get('composer') or '').strip()))
     return pg
 
 def load_md_tracks():
-    """專輯（原始名）→ 曲目清單；純數字行視為解析錯誤丟棄"""
+    """專輯（原始名）→ [(曲目, 作曲者)]；純數字行視為解析錯誤丟棄"""
     d = collections.defaultdict(list); cur = None
     for line in open(MD, encoding='utf-8'):
         if line.startswith('## '):
@@ -117,10 +118,71 @@ def load_md_tracks():
             if re.fullmatch(r'[\d\s\.\-–]+', body):
                 continue
             parts = [x.strip() for x in re.split(r'\s+-\s+', body)]
-            tk = parts[1] if len(parts) >= 2 and parts[0].isdigit() else parts[0]
+            if len(parts) >= 2 and parts[0].isdigit():
+                tk, cp = parts[1], parts[2] if len(parts) > 2 else ''
+            else:
+                tk, cp = parts[0], parts[1] if len(parts) > 1 else ''
             if tk:
-                d[cur].append(tk)
+                d[cur].append((tk, cp))
     return d
+
+def load_alias():
+    """作者別名表：掛名/筆名 → 本全名（解析 `作者全名對照表.md`）"""
+    al = {}
+    try:
+        txt = open(os.path.join(ROOT, '作者全名對照表.md'), encoding='utf-8').read()
+    except Exception:
+        return al
+    for line in txt.split('\n'):
+        if not line.startswith('|'):
+            continue
+        cells = [c.strip().strip('`') for c in line.strip('|').split('|')]
+        if len(cells) < 2:
+            continue
+        a, b = cells[0], cells[1]
+        if not a or not b or a in ('掛名（原名）', '掛名', 'Discogs 掛名'):
+            continue
+        a = re.sub(r'\s*\(\d+\)\s*$', '', a).strip()
+        b = re.sub(r'（.*?）', '', b).strip()
+        if re.search(r'查無|本名即|維持|待確認', b):
+            b = ''
+        if a and b and a.lower() != b.lower():
+            al[a.lower()] = b
+        if len(cells) >= 3 and b:
+            for x in re.split(r'[、,，]', re.sub(r'\(\d+\)', '', cells[2])):
+                x = x.strip().strip('`')
+                if x and not x.isdigit():
+                    al.setdefault(x.lower(), b)
+    return al
+
+ALIAS = load_alias()
+_MULTI = re.compile(r'\s*(?:&|/|,|\+| and |feat\.?|ft\.?)\s*', re.I)
+
+def surnames(name):
+    """作曲者姓氏集合（先套別名表）"""
+    if not name:
+        return set()
+    name = ALIAS.get(name.strip().lower(), name)
+    out = set()
+    for part in _MULTI.split(name.lower()):
+        toks = [x for x in re.split(r"[^A-Za-z'\u00C0-\u024F\-]+", part) if x]
+        if toks:
+            out.add(re.sub(r'[^a-z]', '', toks[-1]))
+    return out
+
+def composer_match(md_c, site_c):
+    """作曲者比對：True 相符／False 不符／None 資訊不足（不排除）"""
+    if not md_c or not site_c:
+        return None
+    a, b = surnames(md_c), surnames(site_c)
+    if not a or not b:
+        return None
+    if a & b:
+        return True
+    na = re.sub(r'[^a-z]', '', md_c.lower()); nb = re.sub(r'[^a-z]', '', site_c.lower())
+    if na and nb and (na in nb or nb in na):
+        return True
+    return False
 
 def main():
     pg = load_program_pages()
@@ -136,15 +198,17 @@ def main():
         for b in brand_of(m.group(3)):
             albums.append((b, raw))
 
-    # 使用頁數（站台現況）
+    # 使用頁數（站台現況）：曲名＋作曲者 都要相符（避免同名不同曲誤判）
     rows = []
     for b, raw in albums:
         tracks = md.get(raw, [])
         used = set()
-        for t in tracks:
+        for t, cp in tracks:
             for p, ts in pg.items():
-                if t in ts:
-                    used.add(p)
+                for (tt, cc) in ts:
+                    if tt == t and composer_match(cp, cc) is not False:
+                        used.add(p)
+                        break
         # 沒用過的照樣列，使用頁數＝0（孝瓏：應該顯示 0 不是 1）
         rows.append((b, norm_album(raw), len(used)))
 
